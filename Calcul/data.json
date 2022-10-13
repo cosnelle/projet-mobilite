@@ -1,0 +1,932 @@
+{
+    "schema": {
+        "fields": [
+            {
+                "name": "Etablissement",
+                "type": "string"
+            },
+            {
+                "name": "Cat\u00e9gorie",
+                "type": "string"
+            },
+            {
+                "name": "Mode",
+                "type": "string"
+            },
+            {
+                "name": "INSEE_DOM",
+                "type": "integer"
+            },
+            {
+                "name": "INSEE_TRA",
+                "type": "integer"
+            },
+            {
+                "name": "Distance",
+                "type": "number"
+            }
+        ]
+    },
+    "data": [
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59000,
+            "Distance": 108,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59000,
+            "Distance": 83,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Train",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59350,
+            "Distance": 232,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59000,
+            "Distance": 39,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Train",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59350,
+            "Distance": 185,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59000,
+            "Distance": 119,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59000,
+            "Distance": 74,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59350,
+            "Distance": 94,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "M\u00e9tro",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59350,
+            "Distance": 58,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "V\u00e9lo",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59350,
+            "Distance": 58,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59512,
+            "Distance": 78,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Bus",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59350,
+            "Distance": 31,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Bus",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59350,
+            "Distance": 101,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59350,
+            "Distance": 142,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Train",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59512,
+            "Distance": 172,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "M\u00e9tro",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59350,
+            "Distance": 127,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Pi\u00e9ton",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59000,
+            "Distance": 195,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Pi\u00e9ton",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59000,
+            "Distance": 193,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59350,
+            "Distance": 172,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59000,
+            "Distance": 34,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59650,
+            "Distance": 198,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "V\u00e9lo",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59650,
+            "Distance": 48,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Bus",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59000,
+            "Distance": 61,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59350,
+            "Distance": 204,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59350,
+            "Distance": 140,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Train",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59350,
+            "Distance": 96,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "V\u00e9lo",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59350,
+            "Distance": 101,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "V\u00e9lo",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59000,
+            "Distance": 148,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Pi\u00e9ton",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59000,
+            "Distance": 10,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Train",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59350,
+            "Distance": 97,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Train",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59350,
+            "Distance": 227,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Bus",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59650,
+            "Distance": 31,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59650,
+            "Distance": 54,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59000,
+            "Distance": 48,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Bus",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59000,
+            "Distance": 47,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59650,
+            "Distance": 131,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "V\u00e9lo",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59350,
+            "Distance": 237,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Bus",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59009,
+            "Distance": 13,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "V\u00e9lo",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59512,
+            "Distance": 207,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Train",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59000,
+            "Distance": 82,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59650,
+            "Distance": 8,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59000,
+            "Distance": 82,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59000,
+            "Distance": 131,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Train",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59000,
+            "Distance": 100,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Bus",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59512,
+            "Distance": 85,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59650,
+            "Distance": 62,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Bus",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59512,
+            "Distance": 249,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59009,
+            "Distance": 222,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "M\u00e9tro",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59650,
+            "Distance": 204,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59000,
+            "Distance": 44,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Pi\u00e9ton",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59650,
+            "Distance": 219,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Pi\u00e9ton",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59650,
+            "Distance": 34,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59350,
+            "Distance": 12,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "M\u00e9tro",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59512,
+            "Distance": 161,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Train",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59650,
+            "Distance": 66,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "V\u00e9lo",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59350,
+            "Distance": 171,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "M\u00e9tro",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59512,
+            "Distance": 44,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59350,
+            "Distance": 34,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Bus",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59512,
+            "Distance": 39,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59350,
+            "Distance": 248,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "V\u00e9lo",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59009,
+            "Distance": 135,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "M\u00e9tro",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59000,
+            "Distance": 111,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "V\u00e9lo",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59000,
+            "Distance": 54,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "M\u00e9tro",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59650,
+            "Distance": 192,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Bus",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59350,
+            "Distance": 89,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59350,
+            "Distance": 55,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Pi\u00e9ton",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59350,
+            "Distance": 235,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Bus",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59512,
+            "Distance": 249,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59512,
+            "Distance": 42,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Pi\u00e9ton",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59650,
+            "Distance": 9,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Bus",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59009,
+            "Distance": 23,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Bus",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59512,
+            "Distance": 243,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59009,
+            "Distance": 116,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59000,
+            "Distance": 69,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59650,
+            "Distance": 5,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Pi\u00e9ton",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59350,
+            "Distance": 233,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59650,
+            "Distance": 246,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "M\u00e9tro",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59650,
+            "Distance": 162,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59350,
+            "Distance": 151,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "V\u00e9lo",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59000,
+            "Distance": 181,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Pi\u00e9ton",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59350,
+            "Distance": 231,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59650,
+            "Distance": 11,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Train",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59009,
+            "Distance": 166,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59009,
+            "Distance": 53,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59350,
+            "Distance": 10,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "M\u00e9tro",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59350,
+            "Distance": 36,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59000,
+            "Distance": 107,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59350,
+            "Distance": 120,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "M\u00e9tro",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59512,
+            "Distance": 44,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59350,
+            "Distance": 2,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59009,
+            "Distance": 125,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "V\u00e9lo",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59000,
+            "Distance": 83,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Trotinette/Autre",
+            "INSEE_DOM": 59507,
+            "INSEE_TRA": 59512,
+            "Distance": 203,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59512,
+            "Distance": 61,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "M\u00e9tro",
+            "INSEE_DOM": 59553,
+            "INSEE_TRA": 59350,
+            "Distance": 244,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Train",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59512,
+            "Distance": 17,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Cat\u00e9gorie": "Enseignant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 59129,
+            "INSEE_TRA": 59009,
+            "Distance": 132,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Pi\u00e9ton",
+            "INSEE_DOM": 59350,
+            "INSEE_TRA": 59350,
+            "Distance": 223,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 Valencienne",
+            "Cat\u00e9gorie": "Etudiant",
+            "Mode": "Voiture \u00e9lectrique",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59350,
+            "Distance": 140,
+            "Usagers": 1.0
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Cat\u00e9gorie": "Biatss",
+            "Mode": "Voiture essence",
+            "INSEE_DOM": 62132,
+            "INSEE_TRA": 59650,
+            "Distance": 54,
+            "Usagers": 1.0
+        }
+    ]
+}
