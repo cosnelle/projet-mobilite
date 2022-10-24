@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/>
+     <!-- La carte doit avoir une hauteur sinon elle ne peut pas apparaitre-->
+     <style type="text/css">
+            #map{
+                height:400px;
+            }
+        </style>
+     <title>Carte</title>
+  </head>
+  <body>
+    <div id="map">
+      
+    </div>
+    <!-- Mettre après Leaflet's CSS -->
+   <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+     crossorigin=""></script>
+     
+     <script type="text/javascript">
+            //initialisation des coordonnees de Lille
+            var lat = 50.633333;
+            var lon = 3.066667;
+            var macarte = null;
+            
+            // Nous initialisons une liste de marqueurs
+            var univs = {
+	            "Univ_Lille": { "lat": 50.608194102437594, "lon": 3.145977484716809 },
+	            "Univ_Valencienne": { "lat": 50.1889313, "lon": 	3.2450944 },
+            	"Univ_Artois": { "lat": 50.3651723, "lon": 	3.521205 },
+            };
+            
+            //initialisation fonction
+            function initMap() {
+                macarte = L.map('map').setView([lat, lon], 11);
+                // recuperation de openstreetmap.fr a la ide du framework leaflet
+                L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                    //lien vers la source de donnees
+                    attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                    minZoom: 1,
+                    maxZoom: 20
+                }).addTo(macarte);
+                //liste des villes
+                for (univ in univs) {
+		              var marker = L.marker([univs[univ].lat, univs[univ].lon]).addTo(macarte);
+	              } 
+            }
+            window.onload = function(){
+		          initMap(); 
+            };
+        </script>
+    
+  </body>
+  
+</html>
