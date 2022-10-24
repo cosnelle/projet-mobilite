@@ -28,7 +28,8 @@ def getCO2Car(distance):
 def getCO2CarOil(distance):
   return 0.223 * distance
 
-def getCO2CarElec(distance):
+# Revoir le calcul pour les voitures electriques
+def getCO2CarElec(distance): 
   return 0.1 * distance
 
 def getCO2Bus(distance, nbPers):
@@ -46,8 +47,7 @@ def getCO2TGV(distance, nbPers):
 # pour le calcul de l emprunte carbonne d un cyclisme
 #   il faut calculer le cout de fabrication du velo
 #  Source non fiable : 100kgCO2 pour un velo neuf
-def getCO2Velo(distance):
-  return 0.0 * distance
+#  non prise en compte de l'emprunte carbonne d un velo mecanique
 
 def getCO2VeloElec(distance):
   return 0.011 * distance
@@ -57,7 +57,6 @@ def getCO2Covoiturage(distance, fonction ,nbPers):
 
 # pour un être humain = 9gCO2 par km
 #   dépense de calorie + alimentation
-
 
 ## tableau de comparaison des modes de transport par km
 import numpy as np
