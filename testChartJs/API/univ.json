@@ -1,0 +1,16 @@
+{"data": [
+        {
+            "Etablissement": "Universit\u00e9 Artois",
+            "Nb_person": 40
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Lille",
+            "Nb_person": 35
+            
+        },
+        {
+            "Etablissement": "Universit\u00e9 de Valenciennes",
+            "Nb_person": 30
+        
+        }
+]}
