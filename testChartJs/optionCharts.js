@@ -34,10 +34,10 @@ const config_pie = {
 const config_bar = {
   type: 'bar',
   data: {
-    labels: ['Univ_lille', 'Univ_valencienne', 'Univ_Artois'],
+    labels: ['Univ Lille', 'Univ Artois', 'Univ Valenciennes'],
     datasets: [{
       label: 'Univ',
-      data: [36, 33, 31],
+      data: [40,30,32] ,
       backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 205, 86, 0.2)'],
       borderColor : [
         'rgba(255, 99, 132, 1)',
@@ -50,7 +50,7 @@ const config_bar = {
     plugins: {
       title: {
         display: true,
-        text: 'Nbr de personne par université',
+        text: 'Nbr de personne par universite',
         padding: {
           top: 10,
           bottom: 30
@@ -59,3 +59,4 @@ const config_bar = {
     }
   }
 };
+
