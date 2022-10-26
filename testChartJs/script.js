@@ -1,12 +1,13 @@
-// utilisation API 
+// deux graphiques avec bouton 
 
 let ctx = null;
 
 let devBarButton = null;
 let devPieButton = null;
 
+
 // regroupement des configurations
-const charts ={
+const charts = {
   devBar: config_bar,
   devPie: config_pie
 };
