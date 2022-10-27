@@ -9,6 +9,7 @@
      <style type="text/css">
             #map{
                 height:400px;
+                width:600px;
             }
         </style>
      <title>Carte</title>
@@ -30,10 +31,11 @@
             
             // Nous initialisons une liste de marqueurs
             var univs = {
-	            "Univ_Lille": { "lat": 50.608194102437594, "lon": 3.145977484716809 },
-	            "Univ_Valencienne": { "lat": 50.1889313, "lon": 	3.2450944 },
-            	"Univ_Artois": { "lat": 50.3651723, "lon": 	3.521205 },
+	            "Univ_Lille": { "lat": 50.608194102437594, "lon": 3.145977484716809, "name": "Univ_Lille"},
+	            "Univ_Valencienne": { "lat": 50.1889313, "lon": 	3.2450944, "name": "Univ_Valencienne" },
+            	"Univ_Artois": { "lat": 50.3651723, "lon": 	3.521205, "name": "Univ_Artois"},
             };
+          
             
             //initialisation fonction
             function initMap() {
@@ -48,7 +50,10 @@
                 //liste des villes
                 for (univ in univs) {
 		              var marker = L.marker([univs[univ].lat, univs[univ].lon]).addTo(macarte);
+		              //ajout des popup
+		              marker.bindPopup(univs[univ].name);
 	              } 
+	     
             }
             window.onload = function(){
 		          initMap(); 
