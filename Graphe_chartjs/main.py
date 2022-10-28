@@ -27,21 +27,38 @@ async def getData_mobilite():
     return json.load(file)
 
 
-async def data_analysis(Nom_colonne: str, titre : str):   #Calcul le nombre d'utilisateur pour chaque moyen de transport
-    dataf = df[Nom_colonne].value_counts()
-    labels_names = dataf.index.tolist()
+
+Etab = df["Etablissement"].unique()
+df_univ_Lille = df [ df["Etablissement"]  == Etab[0] ]
+df_univ_Art = df [ df["Etablissement"]  == Etab[1] ]
+df_univ_Val= df [ df["Etablissement"]  == Etab[2] ]
+
+
+async def data_analysis(frame, Nom_colonne: str):   #Calcul le nombre d'utilisateur pour chaque moyen de transport
+    dataf = frame[Nom_colonne].value_counts()
+    labels_names = dataf.index.sort_values().tolist()
     data = dataf.values.tolist()
-    retour_data = {"labels": labels_names, "data": data, "label": titre}
+    retour_data = {"labels": labels_names, "data": data}
     return retour_data
 
 
 @app.get("/data_aggregation")  
 async def get_data_aggregation():
-    Nb_utilisateurs_modeTransport = await data_analysis("Mode", "nb_utilisateurs")
+    Nb_utilisateurs_modeTransport_global= await data_analysis(df, "Mode")
+    Nb_utilisateurs_modeTransport_univ_Lille = await data_analysis(df_univ_Lille, "Mode")
+    Nb_utilisateurs_modeTransport_univ_Art = await data_analysis(df_univ_Art, "Mode", )
+    Nb_utilisateurs_modeTransport_univ_Val = await data_analysis(df_univ_Val, "Mode")
+
+
+
     return {
-        "data" : {
-            "Nb_utilisateurs_modeTransport": Nb_utilisateurs_modeTransport
+        "data" :{ 
+            "Nb_utilisateurs_modeTransport_global": Nb_utilisateurs_modeTransport_global,
+            "Nb_utilisateurs_modeTransport_univ_Lille": Nb_utilisateurs_modeTransport_univ_Lille,
+            "Nb_utilisateurs_modeTransport_univ_Art":  Nb_utilisateurs_modeTransport_univ_Art,
+            "Nb_utilisateurs_modeTransport_univ_Val":  Nb_utilisateurs_modeTransport_univ_Val
             }
+    
         }
     
 
