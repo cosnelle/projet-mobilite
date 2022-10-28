@@ -6,8 +6,6 @@ import json
 import pandas as pd
 from fastapi import  FastAPI
 
-import json
-
 app = FastAPI()  #créer un objet FastAPI
 
 @app.get("/")  
@@ -21,6 +19,7 @@ async def getData_mobilite():
 
 # calcul du nombre de personnes par universite
 # fonction
+
 def calcul_pers_univ(file):
   df = pd.read_json(file, orient='table')
   # boucle de creation du dictionnaire
