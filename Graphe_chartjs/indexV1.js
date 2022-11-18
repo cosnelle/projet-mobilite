@@ -68,7 +68,7 @@ fetch(API_URL)
     }
 
   })
-  //.then()
+ 
 
 
  

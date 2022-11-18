@@ -14,7 +14,7 @@ app.add_middleware(
     allow_origins=["*"] , #permet d'éviter les erreurs d'accès au serveur API lors du fetch
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"] 
 )
 
 @app.get("/")  #endpoint
@@ -62,6 +62,7 @@ def calcul_nbutilis_modeTransport_univ(frame, Nom_colonne: str):
     
     data = {"data" : { "nb_univ" : len(liste_universite), "Nb_utilisateurs_modeTransport_global" : liste_data_global,  "Nb_utilisateurs_modeTransport_univ": univ }} 
     return data
+    
     
 @app.get("/data_aggregation")  
 async def get_data_aggregation():
