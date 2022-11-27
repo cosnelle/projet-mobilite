@@ -8,8 +8,8 @@ import sys
 etablissements = ["Université de Lille", "Université Artois", "Université Valencienne"]
 categories = ["Enseignant"] + ["Biatss"] + ["Etudiant"]*3 
 modes_de_transport = ["Voiture essence", "Voiture électrique", "Métro", "Train", "Bus", "Vélo", "Trotinette/Autre", "Piéton"]
-insee_lieu_de_domicile = [59507,59129,59553,59350,62132] 
-insee_lieu_de_travail = [59000,59650,59350,59009,59350,59512]
+insee_lieu_de_domicile = [59500,59129,59553,59350,62132] 
+insee_lieu_de_travail = [59000,59650,59350,59491,59300]
 
 if len(sys.argv) != 3:
 	print("USAGE: data-generation.py number-of-samples outfile.json")

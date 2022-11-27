@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
      crossorigin=""/>
+     <title>Carte</title>
      <!-- La carte doit avoir une hauteur sinon elle ne peut pas apparaitre-->
      <style type="text/css">
             #map{
@@ -12,80 +13,32 @@
                 width:700px;
             }
         </style>
-     <title>Carte</title>
+     <script src="tableau.js"></script>
   </head>
+  
   <body>
     <div id="map">
       
     </div>
+    
     <!-- Mettre après Leaflet's CSS -->
-   <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
      crossorigin=""></script>
+     <script type="text/javascript" src="carte.js"></script>
      
-     <script type="text/javascript">
-            //initialisation de la carte
-            var lat = 50.366669;
-            var lon =  3.06667;
-            var macarte= null;
- // Nous initialisons une liste de marqueurs
-            var universite = {
-	            "Univ_Lille": { "lat": 50.608194102437594, "lon": 3.145977484716809, "name": "Université de Lille"},
-	            "Univ_Valenciennes": { "lat": 50.3651723, "lon": 3.521205, "name": "Université de Valenciennes" },
-            	"Univ_Artois": { "lat": 50.1889313, "lon": 	3.2450944, "name": "Université d'Artois"}
-            };
-          
-            
-            //initialisation
-            macarte = L.map('map').setView([lat, lon], 9);
-            osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: 'données <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
-                    minZoom: 5,
-                    maxZoom: 20
-                });
-                osm.addTo(macarte);
-                
-            // ajout de marqueurs
-            for (univ in universite) {
-		              var marker = L.marker([universite[univ].lat, universite[univ].lon]).addTo(macarte);
-		              //ajout des popup
-		              marker.bindPopup(universite[univ].name);
-            }
-            
-            var univs = L.layerGroup([marker]);
-            
-            
-            // creation couches
-            var baseMaps = {"OpenStreetMap": osm};
-            
-            // Layers control
-            var layerControl = L.control.layers(baseMaps).addTo(macarte);
-            
-            // creation d une autre couche
-            //  => lieu de domicile
-            
-            // creation du marqueur
-            //  => douai + bethune
-            
-            // recuperation d une nouvelle icon
-            var redIcon = new L.Icon({
-              iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-              shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-              iconSize: [25, 41],
-              iconAnchor: [12, 41],
-              popupAnchor: [1, -34],
-              shadowSize: [41, 41]
-            });
-            
-            var douai = L.marker([lat, lon], {icon: redIcon}).bindPopup("domicile Douai");
-            var bethune = L.marker([50.531036, 	2.63926], {icon: redIcon}).bindPopup("domicile Bethune");
-            
-            var domiciles = L.layerGroup([douai, bethune]);
-            
-            layerControl.addOverlay(domiciles, "Domiciles");
-            
-
-        </script>
+     
+     <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status" id="loading">
+          <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+      
+    <!-- recuperation des donnees et table affichage du flux de personne -->
+    <div>
+      <h1>Table des flux</h1>
+      <table id="flux_pers" border=1></table>
+    </div>
     
   </body>
   
