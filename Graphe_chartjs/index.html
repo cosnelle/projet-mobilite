@@ -2,17 +2,51 @@
 <html lang="en">  <!-- et se terminent par -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=320", initial-scale="1.0">
+    <meta Content-Type= "text/html", charset="utf-8" >
+    <meta name="viewport" content="width=device-width", initial-scale="1.0"> <!-- width=320 -->
     <title>Projet Mobilité</title>
     <!-- copier le lien pour le css -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script> <!-- Ajouter chartjs a sa page -->
-    
+
+    <!-- Ratio veut 4 fois plus large que long -> 400, 100 -->
+    <style>   
+        .chartBox{ 
+            width: 700px;  
+            height: 400px;
+        }
+      
+        .buttonBox {
+          width: 400px;
+          height: 1px;
+          display: flex;
+          justify-content: left;
+          align-items: center;
+        }
+        button {
+          padding : 5px 10px;  /* largeur/longueur bouton */
+          margin: 5px;
+          background:grey;
+          color: white;
+          border-radius: 20px;
+
+        }
+    </style>   
 </head>
+
 <body>
-   <canvas id="mygraph" width="400" height="100"></canvas> <!-- Ratio veut 4 fois plus large que long -> 400, 100 -->
-   <!-- <button onclick="getStockage_data()">Fetch</button> -->
-   <script src ="index.js"></script>
    
+    <div class="chartBox">
+      <canvas id="myChart"></canvas>
+    </div> 
+
+    <div class="buttonBox">
+    <button  id="mode_transport_univ"> mode_transport_univ</button>   
+    <button  id="nb_person_univ">nb_person_univ</button>   <!-- class="btn btn-sucess" -->
+    </div>
+
+    <script src ="index.js"></script>  
+    
 </body>
 </html>
+
+
