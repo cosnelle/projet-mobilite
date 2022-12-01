@@ -79,5 +79,3 @@ plt.show()
 
 sns.scatterplot(distance,voiture)
 plt.show()
-
-
