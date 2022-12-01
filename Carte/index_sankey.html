@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="ISO 8859-1">
+     <title>Sankey Mobilité</title>
+     <!-- Recuperation de la librairie d3 -->
+     <script src="https://d3js.org/d3.v4.min.js"></script>
+     <!-- chargement de la fonction sankey-->
+     <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/sankey.js"></script>
+     <!-- Plotly -->
+     <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+     <!-- ajout CSS-->
+      <style>
+        .link {
+          fill: none;
+          stroke: #000;
+          stroke-opacity: .2;
+        }
+        .link: hover {
+          stroke-opacity: 1;
+          
+        }
+      </style>
+     
+  </head>
+  
+  <body>
+    
+    <!-- insertion d un sankey diagram avec d3-->
+    <div>
+      <h1>Exemple de diagramme avec Plotly</h1>
+      <div id="my_dataviz"></div>
+      <script type="text/javascript" src="sankey.js"></script>
+    </div>
+    
+  </body>
+  
+</html>
