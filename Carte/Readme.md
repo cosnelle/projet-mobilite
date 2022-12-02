@@ -1,4 +1,29 @@
-Vous êtes dans le Readme de la cartographie.  
 
-Une utilisation de l'api du gouvernement est accessible ici : https://api.gouv.fr/guides/autocompleter-geo
+## Description du contenu du repertoire
+
+Nous retrouvons dans le répertoire Cartographie, l'ensemble des graphique nécessaire à la modélisation des flux de déplacement des individus ayant répondu à l'enquête mobilité. Ce répertoire est composé de programmes html et js. Les programme html, nous permet de visualiser le code Javascript. Les programmes js permettent de créer les graphiques et autre éléments nécessaires à l'analyse de la mobilité des individus.  
+Les fichiers disponibles sont les suivants :  
+
+- carte.js  
+Ce code JavaScript permet la création d'une carte visualisant les lieux de domicile, de travail et les flux de déplacement entre ces deux lieux. Pour cela, nous avons utilisé la librarie [Leaflet](https://leafletjs.com/) et le support de carte de [OpenStreetMap](https://www.openstreetmap.fr/).  
+Sur la carte, nous retrouvons des marqueurs bleu qui représente les lieux de travail (autrement dit les universités), les cercles rouges correspondent au lieux supposés de domicile et les traits verts représentent les flux de déplacement entre ces deux lieux. Le trait est donc plus ou moins épais en fonction du nombre de personnes empruntant ce trajet.  
+
+- tableau.js  
+Ce code JavaScript permet de créer un tableau présentant les déplacement des individus. Sur la première colonne nous retrouvons le code Postal du lieu de domicile, sur la deuxième colonne nous retrouvons le lieu de travail et la dernière colonne nous donne le nombre de personnes qui font ce trajet.  
+
+- sankey.js  
+Ce code JavaScript permet de créer un diagramme de Sankey (diagramme représentant des flux entre une source et une cible : [Wikipedia](https://fr.wikipedia.org/wiki/Diagramme_de_Sankey)). Nous avons utilisé la librarie [Plotly](https://plotly.com/javascript/) qui possède une implémentation du diagramme de Sankey. Pour créer ce diagramme nous utilisons donc la fonction suivante :  
+
+`Plotly.newPlot('mon_graphique', data, layout)`
+
+Et nous précisons dans **data** le type de graphique utilisé :  
+
+` var data = {
+   type: "sankey",
+   ....
+ }
+
+ var data = [data]`
+
+## API utilisée
 
