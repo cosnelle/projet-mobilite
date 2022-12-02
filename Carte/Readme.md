@@ -15,7 +15,6 @@ Ce code JavaScript permet de créer un tableau présentant les déplacements des in
 Ce code JavaScript permet de créer un diagramme de Sankey (diagramme représentant des flux entre une source et une cible : [Wikipedia](https://fr.wikipedia.org/wiki/Diagramme_de_Sankey)). Nous avons utilisé la librarie [Plotly](https://plotly.com/javascript/) qui possède une implémentation du diagramme de Sankey. Pour créer ce diagramme nous utilisons donc la fonction suivante :  
 `Plotly.newPlot('mon_graphique', data, layout)`  
 Et nous précisons dans **data** le type de graphique utilisé :  
-
 ` var data = {type: "sankey",.... }`   
 ` var data = [data]`
 
