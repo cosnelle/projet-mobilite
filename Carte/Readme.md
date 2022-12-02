@@ -18,12 +18,12 @@ Ce code JavaScript permet de créer un diagramme de Sankey (diagramme représentan
 
 Et nous précisons dans **data** le type de graphique utilisé :  
 
-` var data = {
-   type: "sankey",
-   ....
- }
+` var data = {`
+`   type: "sankey",`
+`    .... `
+` }`
 
- var data = [data]`
+` var data = [data]`
 
 ## API utilisée
 
