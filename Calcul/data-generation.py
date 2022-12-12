@@ -54,6 +54,10 @@ data = {
 	            {
 	                "name": "Distance",
 	                "type": "number"
+	            },
+	            {
+	                "name": "Usagers",
+	                "type": "number"
 	            }
 	      ]
 	},
