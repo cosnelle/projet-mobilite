@@ -33,3 +33,27 @@ data = {"codePostal": codePostal, "nom": codePostaldf["nom"][0],
 # autre Structure de donnees
 #   directement avec json
 
+
+# calcul flux de deplacement
+def calcul_flux_deplacement(file):
+  df = pd.read_json(file, orient='table')
+  res = df.groupby(['INSEE_DOM', 'INSEE_TRA'])["Usagers"].sum()
+  x=[]
+  for i in range(len(res)):
+    dep = {"domicile" : str(res.keys()[i][0]), "travail" : str(res.keys()[i][1]) , "Nb_person" : res.iloc[i]}
+    x.append(dep)
+
+  data = {"data" : x} 
+  
+  return data
+
+a = calcul_flux_deplacement('C:/Users/julie/Documents/projet-mobilite/API/data_test_correction.json')
+
+
+df
+res = df.groupby(['INSEE_DOM', 'INSEE_TRA'])["Usagers"].sum()
+x=[]
+for i in range(len(res)):
+  domicile = 
+  dep = {"domicile" : str(res.keys()[i][0]), "travail" : str(res.keys()[i][1]) , "Nb_person" : res.iloc[i]}
+  x.append(dep)
