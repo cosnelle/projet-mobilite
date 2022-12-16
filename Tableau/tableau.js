@@ -1,5 +1,5 @@
 // tableau.js
-// tableau des GES en fonction des modes de transport et des distances
+// tableau des effectifs en fonction des modes de transport et des distances
 
 // @elements
 //        DISTANCES
@@ -10,9 +10,6 @@
 //        appel des données se fait avec une API REST fastAPI en python
 //        API lancée en locale
 //        
-//        CALCUL DES GES
-//        pour les calculs nous utiliserons des fonction python directement implémentées dans
-//        l API locale
 
 const url = "http://127.0.0.1:8000/data_mobilite/tableau";
 
