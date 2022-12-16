@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="ISO 8859-1">
+    
+     <title>Tableau</title>
+     
+     <!-- code CSS utilise -->
+     <style type="text/css">
+            #tableau{
+              width: 500px;
+              height:500px;
+            }
+            #tableau2{
+              width: 500px;
+              height:500px;
+            }
+             
+    </style>
+    <script src="tableau.js"></script>
+    <script src="tableau_co2.js"></script>
+  </head>
+  
+  <body>
+    <div class="spinner-border" role="status" id="loading">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <!-- recuperation des donnees et table affichage des effectifs par mode et
+            tranche de distance                                              -->
+    <div id="tableau">
+      <h1>Table des effectifs</h1>
+      <table id="flux_pers" border=2></table>
+    </div>
+    
+    <div id="tableau2">
+      <h1>Table des GES annuel</h1>
+      <table id="ges" border=2></table>
+    </div>
+    
+  </body>
+  
+</html>
