@@ -1,6 +1,7 @@
 # main.py
 from fastapi import  FastAPI
 import json
+from jsonmerge import merge
 
 import pandas as pd 
 from fastapi.middleware.cors import CORSMiddleware
@@ -26,63 +27,47 @@ async def getData_mobilite():
     file = open('data_mobilite.json')   #Avoir un fichier data_mobilite_json dans le même répertoire
     return json.load(file)
 
-def aggregation(frame, Nom_colonne: str):
-    #Aggrégation mode de transport pour tous les université
-    glob = frame[Nom_colonne].value_counts().sort_index()
-    glob_label = glob.index.tolist() 
-    glob_data = glob.values.tolist()
-    
+def aggregation(frame):
+
     #Aggrégation mode de transport pour chaque université
     res = pd.DataFrame(frame.groupby(["Etablissement"], as_index = False)["Mode"].value_counts()) #Dataframe
     res = res.groupby("Etablissement") #transformer le dataframe en un DataframeGroupby(liste) objet afin de pouvoir récupérer les différents groupes
         
+    liste_Mode_transport= list(res)[0][1].sort_values(["Mode"])["Mode"].tolist()
 
-    liste_universite, liste_Mode_transport, liste_data = [], [], []
+    liste_universite, liste_data = [], []
     for i in range(len(list(res.groups))):  #list(res.groups) retourne la liste des université
            universite = list(res)[i][0]  #list(res) retourne la liste des différents groupe formé lors de l'aggrégation
-           liste_transport_univ= list(res)[i][1].sort_values(["Mode"])["Mode"].tolist()
            liste_data_univ = list(res)[i][1].sort_values(["Mode"])["count"].tolist()
 
            liste_universite.append(universite)
-           liste_Mode_transport.append(liste_transport_univ)
-           liste_data.append(liste_data_univ) #Creation d'une liste de liste contenant le Nb utilisateur pour différents université
-
-    
-    #Création données JSON pour tous les universités
-    liste_data_global = []    
-    for i in range(len(glob_label)):     
-       glob_mode =  {glob_label[i] : glob_data[i]}
-       liste_data_global.append(glob_mode)  
+           liste_data.append(liste_data_univ) #Creation d'une liste de liste contenant le Nb utilisateur pour différents université 
 
 
-    #Création données JSON pour chaque université, creation d'une liste de liste contenant les données agrégées pour chaque université
-    univ, data_univ =  [None]*len(liste_universite), []  
+    #Création données JSON pour chaque université
+    univ, data_univ, y =  [None]*len(liste_universite), [], {}  
     for i in range(len(liste_universite)): 
           for j in range (len(liste_data[i])):   
-             x =  {"Université": liste_universite[i], liste_Mode_transport[i][j] : liste_data[i][j]}
-             data_univ.append(x)
-          univ[i] = data_univ
-          data_univ = []  
-
-    #Aggrégation nombre de personne par université
-    res1=frame.groupby("Etablissement")["Usagers"].sum()
-    liste_person_univ=[]
-    for i in range(len(res)):
-        person_univ = {res1.keys()[i]: res1[i]} # utilisation de res.keys()[i] pour les labels,  res[i] pour les valeurs associées
-        liste_person_univ.append(person_univ)
+             x =  { liste_Mode_transport[j] : liste_data[i][j]}
+             y = merge(y, x)
+          univ[i] = y
+          y = {}
     
-    data = { "data" : { "nb_univ" : len(liste_universite), "Nb_utilisateurs_modeTransport_global" : liste_data_global,  "Nb_utilisateurs_modeTransport_univ": univ, "nb_person_univ": liste_person_univ  }}
+    liste_univ, w  = [], {}
+    for i in range(len(liste_universite)): 
+        z = {liste_universite[i] : (univ[i])}
+        w = merge(w, z)
+        liste_univ.append(w)
+        w = {}
+       
+    data = { "data" : liste_univ }  
     return data
-
    
-@app.get("/data_aggregation")  
+@app.get("/mode_transport_univ")  
 async def get_data_aggregation():
-    file = aggregation(df, "Mode")
+    file = aggregation(df)
     return file
 
-
-
-  
     
 
 
