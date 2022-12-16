@@ -19,26 +19,21 @@ fetch(API_URL)
       const lighten = (color, value) => Chart.helpers.color(color).lighten(value).rgbString();
        
       // données creation graphique mode transport pour chaque univ
-      console.log(JSONdata.data)
       const liste_univ  = JSONdata.data.map(
         function(index){  //considère tous ensemble data st des index, pour chaque index recurepère clé
           return Object.keys(index)[0]; // Object.keys(index) retourne les differents label sous forme de liste,  [0] permet de récupérer la valeur
-        }) 
-      console.log(liste_univ)  
+        })   
       
       const donnee  = JSONdata.data.map( index => {
           return Object.values(index)[0];  //parcours une liste d'ensemble(dictionnaire) et recupère les valeurs
         })
-      console.log(donnee) 
       
       const labels = Object.keys(donnee[0]) ////recupère clés d'un ensemble(dictionnaire) sous forme de liste
-      console.log(labels) 
 
       //Recupération données pour chaque université
       const liste_data = donnee.map( index => {
           return Object.values(index);
         }) 
-      console.log(liste_data)
 
       //calcul donnée pour toutes les universités(global), somme sur les modes de transport
       var data_global = []
@@ -50,9 +45,7 @@ fetch(API_URL)
           data_global.push(total) 
           total = 0 
       }
-      console.log(data_global)
 
-      
       var datasets = []  // def datasets contruire data
       d_glob = { label: "Nb_utilisateurs_global", data: data_global }
       datasets.push(d_glob)
@@ -60,7 +53,6 @@ fetch(API_URL)
         const data = { label : liste_univ[i], data: liste_data[i] }
         datasets.push(data)
       }
-      console.log(datasets)
     
       const data1 = {   // def data pour construire config
         labels: labels,
@@ -128,7 +120,6 @@ fetch(API_URL)
         liste_sum.push(sum)
         sum = 0
       }
-      console.log(liste_sum)
 
       var val =  []   //calcul pourcentage nb_utilisateur mode transport par univ
       var liste_val = []
@@ -141,7 +132,6 @@ fetch(API_URL)
           liste_val.push(val) 
           val = []
       }
-      console.log(liste_val)
 
 
       var datasets = []  
@@ -149,7 +139,6 @@ fetch(API_URL)
       for(let i=0; i<liste_sum.length; i++){
         util_total += liste_sum[i]
       }
-      console.log(util_total)
 
       var liste_sum_pourcent = []     //somme pourcentage differents mode transport pour univ(global)
       for(let i=0; i<data_global.length; i++){
@@ -157,18 +146,15 @@ fetch(API_URL)
           sum_pourcent = sum_pourcent.toFixed(1);
           liste_sum_pourcent.push(sum_pourcent)
       }
-      console.log(liste_sum_pourcent) 
 
       for (let i=0; i<liste_sum_pourcent.length; i++){  //rajout de la valeur pourcent global dans listes contenues dans liste_val
          liste_val[i].push(liste_sum_pourcent[i])  
       }
-      console.log(liste_val)
 
       for (let i = 0; i < label.length ; i++) {
         const data = { label : label[i], data: liste_val[i]}
         datasets.push(data)
       }
-      console.log(datasets)
     
       const data2 = {   
         labels: labels2,
