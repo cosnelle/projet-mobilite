@@ -1,3 +1,6 @@
+//COMMENT(dmarchal:2023-01-09): Copyright and authors missing.
+//COMMENT(dmarchal:2023-01-09): Mix of French & English in code. 
+
 //tableau calcul GES 
 // tableau.js
 // tableau des GES en fonction des modes de transport et des distances
@@ -15,6 +18,7 @@
 //        pour les calculs nous utiliserons des fonction python directement implémentées dans
 //        l API locale
 
+//COMMENT(dmarchal:2023-01-09): Remove reference to local webserver.
 const url_co2 = "http://127.0.0.1:8000/data_mobilite/tableau/calculCO2";
 
 function hideloader(){
@@ -28,6 +32,7 @@ function affichageDataCO2(data){
   // première ligne du tabeau correspond aux distances discrétisées
   // QUESTION : possibilité d'automatiser cette phase ? Utilité d'automatiser ?
   //          Si les tranches de distance changent : OUI Sinon ?
+  //COMMENT(dmarchal:2023-01-09): Always better to automate.
   let tab =
       `<tr>
         <th>  </th>
@@ -58,7 +63,8 @@ function affichageDataCO2(data){
   
 }
   
-//getData
+//COMMENT(dmarchal:2023-01-09): The following comment 'getData' has no added value
+//getData 
 async function getDataCO2(url){
   // recuperation de la reponse
   const reponse = await fetch(url);
@@ -71,5 +77,7 @@ async function getDataCO2(url){
   }
   affichageDataCO2(data);
 }
+
+//COMMENT(dmarchal:2023-01-09): The following comment 'getData' has no added value
 // appel de la fonction getData
 getDataCO2(url_co2);

@@ -2,6 +2,11 @@
 // ensemble du code pour la creation de la carte openstreetmap
 // utilisation du framework Leaflet
 
+// COMMENT(dmarchal:2023-01-09): Here the use of direct call to geo-api-gouv-fr will be of very very 
+//                               poors performances because it will generate hundreds of request per page to gouv.fr
+//                               it is much better to request the needed coordinate from PC in your own sever and caching the result.  
+//                               this is a serious site design issue. 
+
 // fonction js utilisees dans ce programme
 function hideloader(){
   document.getElementById('loading').style.display = 'none';
@@ -186,11 +191,14 @@ var layerControl = L.control.layers(baseMaps).addTo(macarte);
 L.control.scale().addTo(macarte);
 
 // ajout des lieux de travail : universite represente par des marqueurs bleus
-// url de l api FAST API
+// url de notre api REST 
+
+// COMMENT(dmarchal:2023-01-09): No hardcoded url + do this rest function exists ? 
 const url_travail = "http://127.0.0.1:8000/data_mobilite/label_colonne/INSEE_TRA";
 
 // domicile des individus représenté par des zones rouges
-// url de l api FAST API
+
+// COMMENT(dmarchal:2023-01-09): No hardcoded url + do this rest function exists ? 
 const url_domicile = "http://127.0.0.1:8000/data_mobilite/label_colonne/INSEE_DOM";
 
 // appel fonctions
@@ -203,6 +211,7 @@ get_lieux(url_travail, "travail");
 // creation des traits
 
 // ajouter les flux de deplacement
+// COMMENT(dmarchal:2023-01-09): No hardcoded url + do this rest function exists ? 
 const url_flux_dep = "http://127.0.0.1:8000/geo/flux/person";
 get_flux(url_flux_dep);
 

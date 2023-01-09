@@ -1,4 +1,6 @@
 // sankey.js
+
+// COMMENT(dmarchal:2023-01-09): Remove hardcoded path
 d3.json('http://127.0.0.1:8000/geo/flux/sankey', function(fig){
 
 const source = fig.links.map(

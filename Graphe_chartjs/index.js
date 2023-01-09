@@ -1,3 +1,4 @@
+//COMMENT(dmarchal:2023-01-09): Remove reference to local webserver.
 const API_URL = "http://127.0.0.1:8000/mode_transport_univ"
 fetch(API_URL) 
    .then(res => res.json())         //recupère données format json qui sera ensuite appélé JSONdata         

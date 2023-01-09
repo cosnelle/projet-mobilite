@@ -1,6 +1,7 @@
 //heatmap
 // with plotly
 
+//COMMENT(dmarchal:2023-01-09): Remove reference to local webserver.
 d3.json("http://127.0.0.1:8000/data_mobilite/tableau/calculCO2", function(fig){
   // variables des x (abscisses) = distances discrétisées
   const xValues = Object.keys(fig.data[0])
