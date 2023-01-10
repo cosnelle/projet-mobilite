@@ -1,3 +1,6 @@
+//COMMENT(dmarchal:2023-01-09): Copyright and authors missing.
+//COMMENT(dmarchal:2023-01-09): Mix of French & English in code. 
+
 // tableau.js
 // tableau des effectifs en fonction des modes de transport et des distances
 
@@ -11,13 +14,16 @@
 //        API lancée en locale
 //        
 
+//COMMENT(dmarchal:2023-01-09): Remove reference to local webserver.
 const url = "http://127.0.0.1:8000/data_mobilite/tableau";
 
+//COMMENT(dmarchal:2023-01-09): Duplicate something already in tableau_co2.js, must be factored in. 
 function hideloader(){
   document.getElementById('loading').style.display = 'none';
 }
 
 
+//COMMENT(dmarchal:2023-01-09): The following function duplicates something already in tableau_co2.js, must be factored in. 
 //fonction affichage
 // ici la fonction affichageData est specifique au service créé
 function affichageData(data){

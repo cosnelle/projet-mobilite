@@ -1,8 +1,4 @@
-Nous sommes deux Ã©tudiantes Ã  Polytech. Ce dÃ©pot nous permet de rendre compte du travail que nous rÃ©alisons pour le projet ingÃ©nieur.
-
-
 ## Description du contenu du répertoire
-
 Nous retrouvons dans le répertoire Cartographie, l'ensemble des graphiques nécessaires à la modélisation des flux de déplacement des individus ayant répondu à l'enquête mobilité. Ce répertoire est composé de programmes html et js. Les programmes html, nous permettent de visualiser le code Javascript. Les programmes js permettent de créer les graphiques et autres éléments nécessaires à l'analyse de la mobilité des individus.  
 Les fichiers disponibles sont les suivants :  
 
@@ -15,14 +11,16 @@ Ce code JavaScript permet de créer un tableau présentant les déplacements des in
 
 - sankey.js  
 Ce code JavaScript permet de créer un diagramme de Sankey (diagramme représentant des flux entre une source et une cible : [Wikipedia](https://fr.wikipedia.org/wiki/Diagramme_de_Sankey)). Nous avons utilisé la librarie [Plotly](https://plotly.com/javascript/) qui possède une implémentation du diagramme de Sankey. Pour créer ce diagramme nous utilisons donc la fonction suivante :  
-`Plotly.newPlot('mon_graphique', data, layout)`  
+```python
+Plotly.newPlot('mon_graphique', data, layout)
+```  
 Et nous précisons dans **data** le type de graphique utilisé :  
-` var data = {type: "sankey",.... }`   
-` var data = [data]`
-
+```python
+var data = {type: "sankey",.... }
+var data = [data]
+```
 
 ## API utilisée
-
 Dans cette partie, nous verrons les routes utilisées dans l'API pour créer ces représentations graphiques. En effet, les données ne comportent pas de coordonnées géographiques nécessaires à la représentation de cartographie.  
 
 A venir ...

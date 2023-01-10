@@ -24,6 +24,8 @@ async def home():
 
 @app.get("/data_mobilite")
 async def getData_mobilite():
+    # COMMENT(dmarchal:2023-01-09): Is opening the file as json really needed ? The following code 
+    #                               Is opening the file, unserialize its binary content from json, then serialize the json back to binary content before sending to the client.
     file = open('data_mobilite.json')   #Avoir un fichier data_mobilite_json dans le même répertoire
     return json.load(file)
 
