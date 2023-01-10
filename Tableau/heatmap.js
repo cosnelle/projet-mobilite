@@ -9,9 +9,6 @@ d3.json("http://127.0.0.1:8000/data_mobilite/tableau/calculCO2", function(fig){
   // variables des x (abscisses) = distances discrétisées
   const xValues = Object.keys(fig.data[0]);
 
-d3.json("http://127.0.0.1:8000/data_mobilite/tableau/calculCO2", function(fig){
-  // variables des x (abscisses) = distances discrétisées
-  const xValues = Object.keys(fig.data[0])
   // variables des y (ordonnées) = mode de transport
   const yValues = fig.mode.map(
   function(index){
@@ -34,7 +31,7 @@ d3.json("http://127.0.0.1:8000/data_mobilite/tableau/calculCO2", function(fig){
     z: zValues, // couleur : rejets de CO2
     x: xValues, // distances discrétisées
     y: yValues, // modes de transport
-    type: 'heatmap', // preciser quel type de graphique à uyiliser
+    type: 'heatmap', // preciser quel type de graphique a uyiliser
 
     colorscale: 'RdBu',
     hoverongaps: false
@@ -71,4 +68,4 @@ d3.json("http://127.0.0.1:8000/data_mobilite/tableau/calculCO2", function(fig){
   Plotly.newPlot('myDiv', data, layout);
   
   
-})
+});
