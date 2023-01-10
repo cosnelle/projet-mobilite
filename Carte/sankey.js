@@ -34,9 +34,6 @@ function generateRandomColors(nbNodes) {
 // appel de la fonction generateRandomColors()
 let color_random = generateRandomColors(fig.nodes.length);
 
-console.log(color_random);
-console.log(source);
-
 // creation vecteur de couleur des liens en fonction de la source
 let links_color_source = [];
 
@@ -71,10 +68,10 @@ var data = {
   orientation: "h",
   valuesuffix: "Personnes",
   node: {
-    pad: 15,
-    thickness: 15,
+    pad: 0.1,
+    thickness: 0.1,
     line: {
-      width: 0.5
+      width: 0.01
     },
    label: fig.nodes,
    color: color_random
@@ -94,10 +91,10 @@ var data = [data]
 // configuration du graphe
 var layout = {
   title: "Les flux de déplacement du personnels et des étudiants de l'Université de Lille",
-  width: 1118,
-  height: 772,
+  width: 1000,
+  height: 1000,
   font: {
-    size: 10,
+    size: 9,
     color: "black"
   }
 }
