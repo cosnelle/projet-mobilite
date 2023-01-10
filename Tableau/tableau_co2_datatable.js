@@ -60,7 +60,8 @@ function affichageDataTable(data){
     data: data.data,
     columns: [
       {"data": "mode"},
-      {"data": "d_00_03"},
+      {"data": "d_00_01"},
+      {"data": "d_01_03"},
       {"data": "d_03_05"},
       {"data": "d_05_10"},
       {"data": "d_10_20"},
