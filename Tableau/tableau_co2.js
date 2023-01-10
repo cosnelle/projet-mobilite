@@ -1,4 +1,4 @@
-//tableau calcul GES 
+//tableau calcul GES
 // tableau.js
 // tableau des GES en fonction des modes de transport et des distances
 
@@ -6,19 +6,19 @@
 //        DISTANCES
 //        utilisation d'une discretisation des distances
 //        [0;3], [3;5], [5;10], [10;20], [20;50], [50;100], [100;250]
-//        
+//
 //        RECUPERATION DES DONNEES
 //        appel des données se fait avec une API REST fastAPI en python
 //        API lancée en locale
-//        
+//
 //        CALCUL DES GES
-//        pour les calculs nous utiliserons des fonction python directement implémentées dans
-//        l API locale
+//        pour les calculs nous utiliserons des fonction python directement
+//        implémentées dans l API locale
 
 const url_co2 = "http://127.0.0.1:8000/data_mobilite/tableau/calculCO2";
 
 function hideloader(){
-  document.getElementById('loading').style.display = 'none';
+  document.getElementById("loading").style.display = "none";
 }
 
 
@@ -39,7 +39,8 @@ function affichageDataCO2(data){
         <th> 50 à 100 km</th>
         <th> 100 à 250 km</th>
       <tr>`;
-  let i=0; // indice qui nous permet de dire sur quel mode de transport nous sommes
+  // indice qui nous permet de dire sur quel mode de transport nous sommes
+  let i=0;
   for (let r of data.data){
       tab += `<tr>
         <td>${data.mode[i]}</td>
@@ -52,17 +53,13 @@ function affichageDataCO2(data){
         <td>${r.d_100_250}</td>
       <tr>`;
       i= i+1;
-    
   }
   document.getElementById("ges").innerHTML = tab;
-  
 }
-  
 //getData
 async function getDataCO2(url){
   // recuperation de la reponse
   const reponse = await fetch(url);
-  
   // stockage des donnees
   var data = await reponse.json();
   console.log(data);

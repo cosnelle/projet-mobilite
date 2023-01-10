@@ -1,16 +1,19 @@
-//heatmap
-// with plotly
+// heatmap : carte de chaleur
+// Creation d'une carte de chaleur afin de mieux visualiser les distances et mode de transport qui
+//   qui consomment le plus
+// Utilisation de plotly
 
+// recuperation des donnees
 d3.json("http://127.0.0.1:8000/data_mobilite/tableau/calculCO2", function(fig){
   // variables des x (abscisses) = distances discrétisées
-  const xValues = Object.keys(fig.data[0])
-  console.log(xValues);
+  const xValues = Object.keys(fig.data[0]);
+
   // variables des y (ordonnées) = mode de transport
   const yValues = fig.mode.map(
   function(index){
     return index;
   });
-  console.log(yValues);
+  
   // variables des z (couleur) = rejet de CO2 annuel
   // boucle for pour aller chercher toutes les valeurs
   let zValues = [];
@@ -19,19 +22,19 @@ d3.json("http://127.0.0.1:8000/data_mobilite/tableau/calculCO2", function(fig){
     zValues.push(intermediaire);
   }
   
-  console.log(zValues);
-  
+  // creation de la variable data utilisée pour faire la heatmap
   var data = [
   {
-    z: zValues,
-    x: xValues,
-    y: yValues,
-    type: 'heatmap',
+    z: zValues, // couleur : rejets de CO2
+    x: xValues, // distances discrétisées
+    y: yValues, // modes de transport
+    type: 'heatmap', // preciser quel type de graphique à uyiliser
     colorscale: 'RdBu',
     hoverongaps: false
     }
   ];
 
+  // paramètres du graphique : titre, taille, police, ...
   var layout = {
     title: 'Carte de chaleur des rejets annuels de GES des étudiants et des personnels de l Universite de Lille ',
     annotations: [],
@@ -54,6 +57,7 @@ d3.json("http://127.0.0.1:8000/data_mobilite/tableau/calculCO2", function(fig){
     }
   };
 
+  //création du graphique
   Plotly.newPlot('myDiv', data, layout);
   
   
