@@ -1,3 +1,4 @@
+
 //tableau calcul GES
 // tableau.js
 // tableau des GES en fonction des modes de transport et des distances
@@ -6,14 +7,16 @@
 //        DISTANCES
 //        utilisation d'une discretisation des distances
 //        [0;3], [3;5], [5;10], [10;20], [20;50], [50;100], [100;250]
+
 //
 //        RECUPERATION DES DONNEES
-//        appel des données se fait avec une API REST fastAPI en python
-//        API lancée en locale
+//        appel des donnÃ©es se fait avec une API REST fastAPI en python
+//        API lancÃ©e en locale
 //
 //        CALCUL DES GES
 //        pour les calculs nous utiliserons des fonction python directement
-//        implémentées dans l API locale
+//        implÃ©mentÃ©es dans l API locale
+
 
 const url_co2 = "http://127.0.0.1:8000/data_mobilite/tableau/calculCO2";
 
@@ -23,21 +26,21 @@ function hideloader(){
 
 
 //fonction affichage
-// ici la fonction affichageData est specifique au service créé
+// ici la fonction affichageData est specifique au service crÃ©Ã©
 function affichageDataCO2(data){
-  // première ligne du tabeau correspond aux distances discrétisées
-  // QUESTION : possibilité d'automatiser cette phase ? Utilité d'automatiser ?
+  // premiÃ¨re ligne du tabeau correspond aux distances discrÃ©tisÃ©es
+  // QUESTION : possibilitÃ© d'automatiser cette phase ? UtilitÃ© d'automatiser ?
   //          Si les tranches de distance changent : OUI Sinon ?
   let tab =
       `<tr>
         <th>  </th>
-        <th> 0 à 3 km </th>
-        <th> 3 à 5 km</th>
-        <th> 5 à 10 km</th>
-        <th> 10 à 20 km</th>
-        <th> 20 à 50 km</th>
-        <th> 50 à 100 km</th>
-        <th> 100 à 250 km</th>
+        <th> 0 Ã  3 km </th>
+        <th> 3 Ã  5 km</th>
+        <th> 5 Ã  10 km</th>
+        <th> 10 Ã  20 km</th>
+        <th> 20 Ã  50 km</th>
+        <th> 50 Ã  100 km</th>
+        <th> 100 Ã  250 km</th>
       <tr>`;
   // indice qui nous permet de dire sur quel mode de transport nous sommes
   let i=0;
