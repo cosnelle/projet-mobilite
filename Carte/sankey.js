@@ -1,25 +1,25 @@
 // sankey.js
-d3.json('http://127.0.0.1:8000/geo/flux/sankey', function(fig){
+d3.json("http://127.0.0.1:8000/geo/flux/sankey", function(fig){
 
 const source = fig.links.map(
   function(index){
     return index.source;
-  })
+  });
 
 const target = fig.links.map(
   function(index){
     return index.target;
-  })
+  });
 
 const value = fig.links.map(
   function(index){
     return index.value;
-  })
+  });
 
 // fonction qui genere un vecteur de couleurs a partir d un nombre de noeuds
 function generateRandomColors(nbNodes) {
   let colors= [];
-  
+
   for (var i = 0; i < nbNodes; i++) {
     // rgba
     var r = Math.floor(Math.random() * 256);
@@ -78,7 +78,7 @@ var data = {
       },
 
   link: {
-    source: source, 
+    source: source,
     target: target,
     value: value,
     opacity: 0.1,
@@ -99,8 +99,7 @@ var layout = {
   }
 }
 
-Plotly.newPlot('my_dataviz', data, layout)
+Plotly.newPlot("my_dataviz", data, layout)
 
 
 });
-

@@ -4,7 +4,7 @@
 
 // fonction js utilisees dans ce programme
 function hideloader(){
-  document.getElementById('loading').style.display = 'none';
+  document.getElementById("loading").style.display = "none";
 }
 
 // fonction qui recupere les codes postaux de tous les domiciles renseignes dans la salle
@@ -14,7 +14,6 @@ async function get_lieux(url,type){
   const reponse = await fetch(url);
   // stockage des donnees
   var data = await reponse.json();
-  console.log(data);
   if(reponse){
     hideloader();
   }
@@ -29,10 +28,10 @@ function affichage_lieux(data, type){
   // boucle d affichage des domiciles
   for (let r of data.data){
     // recuperation des coordonnees GPS du centre de la commune de domicile
-    let url_coordonnees =`https://geo.api.gouv.fr/communes?codePostal=${r.x}&fields=centre`; 
+    let url_coordonnees =`https://geo.api.gouv.fr/communes?codePostal=${r}&fields=centre`;
     get_coordonnees(url_coordonnees, type);
   }
-  
+
 }
 
 // fonction qui recupere les coordonnees GPS du centre d une commune
@@ -51,7 +50,7 @@ async function get_coordonnees(url, type){
     } else if(type == "travail"){
       new_marker(data);
     } else if (type == "points"){
-      
+
     }
 }
 
@@ -62,11 +61,11 @@ function new_circle(data){
   let lat = data[0].centre.coordinates[1];
   let long = data[0].centre.coordinates[0];
   let nom_ville = data[0].nom;
-  
+
   var new_ville = L.circle([lat, long], {
-    color: 'red',
+    color: "red",
     fillOpacity: 0.5,
-    fillColor: '#f03',
+    fillColor: "#f03",
     radius: 2500
   }).bindPopup(nom_ville);
   // ajout du cercle a la carte
@@ -76,7 +75,7 @@ function new_circle(data){
 // fonction de creation d un marqueur bleu
 //   qui represente un lieu de travail = universite
 function new_marker(data){
-  // coordonnees GPS + nom de la commune 
+  // coordonnees GPS + nom de la commune
   let lat = data[0].centre.coordinates[1];
   let long = data[0].centre.coordinates[0];
   let nom_ville = data[0].nom;
@@ -97,23 +96,23 @@ async function get_flux(url){
   if(reponse){
     hideloader();
   }
-  
+
   init_tracer_ligne(data);
 }
 
-// fonction d initialisation 
+// fonction d initialisation
 function init_tracer_ligne(data){
-  
+
   for (let r of data.data){
     let url_coordonnees_domicile =`https://geo.api.gouv.fr/communes?codePostal=${r.domicile}&fields=centre`;
     let url_coordonnees_travail =`https://geo.api.gouv.fr/communes?codePostal=${r.travail}&fields=centre`;
-    
-    let poids = r.Nb_person; 
+
+    let poids = r.Nb_person;
     get_coordonnees_ligne(url_coordonnees_domicile, url_coordonnees_travail, poids);
-    
+
   }
   //layerControl.addOverlay(trait_nb_person, "Trajets en fonction du nombre de personnes");
-  
+
 }
 
 // fonction qui recupere deux coordonnees GPS
@@ -126,7 +125,7 @@ async function get_coordonnees_ligne(url1, url2, weight){
     if(reponse1){
       hideloader();
     }
-    
+
     // recuperation de la reponse2
     const reponse2 = await fetch(url2);
     // stockage des donnees
@@ -135,9 +134,9 @@ async function get_coordonnees_ligne(url1, url2, weight){
     if(reponse2){
       hideloader();
     }
-    
+
     tracer_ligne(data1, data2, weight);
-    
+
 }
 
 // fonction qui trace un trait
@@ -149,12 +148,12 @@ function tracer_ligne(data1, data2, weight){
     [data1[0].centre.coordinates[1], data1[0].centre.coordinates[0]],
     [data2[0].centre.coordinates[1], data2[0].centre.coordinates[0]]
     ]);
-    
+
   polyline.setStyle({
-    color: 'green', weight: poids
+    color: "green", weight: poids
   }).bindPopup("Trajet de " + data1[0].nom + " à " + data2[0].nom + "<br />Nombre de personnes : " + poids);
   polyline.addTo(macarte);
-  
+
 }
 
 
@@ -166,22 +165,22 @@ function tracer_ligne(data1, data2, weight){
 var lat = 50.366669;
 var lon =  3.06667;
 var macarte= null;
-          
+
 //initialisation de la carte
-macarte = L.map('map').setView([lat, lon], 9);
-osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+macarte = L.map("map").setView([lat, lon], 9);
+osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
                     attribution: 'données <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
                     minZoom: 5,
                     maxZoom: 20
 });
 osm.addTo(macarte);
-                
+
 // creation couches
 var baseMaps = {"OpenStreetMap": osm};
-            
+
 // Layers control
 var layerControl = L.control.layers(baseMaps).addTo(macarte);
-            
+
 //ajout d une echelle cartographique
 L.control.scale().addTo(macarte);
 
@@ -217,8 +216,8 @@ var poids = 5;
 
 var polyline = L.polyline(points);
 var poly = L.polyline([[ 50.6278677, 3.1247218], [50.72459030151367, 3.16391921043396]]);
-polyline.setStyle({color: 'red', weight: 10});
-poly.setStyle({color:'red', weight:10});
+polyline.setStyle({color: "red", weight: 10});
+poly.setStyle({color:"red", weight:10});
 
 var trajets  = L.layerGroup([polyline]);
 trajets = L.layerGroup([poly]);
