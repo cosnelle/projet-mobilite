@@ -75,9 +75,8 @@ def getCO2Pied(distance):
 def getCO2Velo(distance):
     return 0.0048 * distance
 
-# creation de getCO2Autre : trotinette et autre
 
-
+# verifier les coef
 def getCO2Autre(distance):
     return 0.024 * distance
 
@@ -89,6 +88,3 @@ def getCO2Trotinette(distance):
 def getCO2Moto(distance):
     return 0.1609 * distance
   
-
-def getCO2Skateboard(distance):
-    return 0.001 * distance
