@@ -73,7 +73,7 @@ def calculGES(df):
 
         elif df_nouv.Mode[i] == "Trotinette/Autre":
             df_nouv.loc[i, "Calcul_GES"] = (
-                nb_jour * nb_trajet * getCO2Autre(df_nouv.Distance[i])
+                nb_jour * nb_trajet * getCO2Trotinette(df_nouv.Distance[i])
             )
 
         elif df_nouv.Mode[i] == "Voiture essence":
@@ -91,7 +91,7 @@ def calculGES(df):
                 nb_jour * nb_trajet * getCO2Velo(df_nouv.Distance[i])
             )
             
-        elif df_nouv.Mode[i] == "Deux-roues motoris\u00e9 : scooter, moto...":
+        elif df_nouv.Mode[i] == "Deux-roues motoris\u00e9":
             df_nouv.loc[i, "Calcul_GES"] = (
                 nb_jour * nb_trajet * getCO2Moto(df_nouv.Distance[i])
             )
@@ -100,16 +100,7 @@ def calculGES(df):
             df_nouv.loc[i, "Calcul_GES"] = (
                 nb_jour * nb_trajet * getCO2Autre(df_nouv.Distance[i])
             )
-            
-        elif df_nouv.Mode[i] == "Trotinette":
-            df_nouv.loc[i, "Calcul_GES"] = (
-                nb_jour * nb_trajet * getCO2Trotinette(df_nouv.Distance[i])
-            )
-            
-        elif df_nouv.Mode[i] == "Skateboard":
-            df_nouv.loc[i, "Calcul_GES"] = (
-                nb_jour * nb_trajet * getCO2Skateboard(df_nouv.Distance[i])
-            )
+
 
     return df_nouv
 
