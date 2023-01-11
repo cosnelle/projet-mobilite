@@ -29,8 +29,9 @@ function affichage_lieux(data, type){
   // boucle d affichage des domiciles
   for (let r of data.data){
     // recuperation des coordonnees GPS du centre de la commune de domicile
-    let url_coordonnees =`https://geo.api.gouv.fr/communes?codePostal=${r.x}&fields=centre`; 
+    let url_coordonnees =`https://geo.api.gouv.fr/communes?codePostal=${r}&fields=centre`; 
     get_coordonnees(url_coordonnees, type);
+    console.log(r)
   }
   
 }
