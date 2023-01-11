@@ -1,6 +1,6 @@
 //fetch
 
-const flux_url = "http://127.0.0.1:8000/geo/flux/person";
+const flux_url = "http://127.0.0.1:8000/data_mobilite/geo/flux/person";
 
 function hideloader(){
   document.getElementById('loading').style.display = 'none';
