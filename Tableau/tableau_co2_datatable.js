@@ -31,7 +31,7 @@
 // autre manière sans JQuery
 
 
-const url_co2 = "http://127.0.0.1:8000/data_mobilite/tableau_DataTables/CalculCO2";
+const url_co2 = "http://127.0.0.1:8000/data_mobilite/tableau_DataTables/calculCO2";
 
 
 function hideloader(){
