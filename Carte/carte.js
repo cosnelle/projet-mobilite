@@ -29,7 +29,9 @@ function affichage_lieux(data, type){
   for (let r of data.data){
     // recuperation des coordonnees GPS du centre de la commune de domicile
     let url_coordonnees =`https://geo.api.gouv.fr/communes?codePostal=${r}&fields=centre`;
+
     get_coordonnees(url_coordonnees, type);
+    console.log(r)
   }
 
 }
@@ -151,7 +153,7 @@ function tracer_ligne(data1, data2, weight){
 
   polyline.setStyle({
     color: "green", weight: poids
-  }).bindPopup("Trajet de " + data1[0].nom + " à " + data2[0].nom + "<br />Nombre de personnes : " + poids);
+  }).bindPopup("Trajet de " + data1[0].nom + " Ã  " + data2[0].nom + "<br />Nombre de personnes : " + poids);
   polyline.addTo(macarte);
 
 }
@@ -169,7 +171,7 @@ var macarte= null;
 //initialisation de la carte
 macarte = L.map("map").setView([lat, lon], 9);
 osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                    attribution: 'données <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                    attribution: 'donnÃ©es <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
                     minZoom: 5,
                     maxZoom: 20
 });
@@ -188,7 +190,7 @@ L.control.scale().addTo(macarte);
 // url de l api FAST API
 const url_travail = "http://127.0.0.1:8000/data_mobilite/label_colonne/INSEE_TRA";
 
-// domicile des individus représenté par des zones rouges
+// domicile des individus reprÃ©sentÃ© par des zones rouges
 // url de l api FAST API
 const url_domicile = "http://127.0.0.1:8000/data_mobilite/label_colonne/INSEE_DOM";
 
