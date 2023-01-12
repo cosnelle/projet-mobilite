@@ -152,7 +152,7 @@ function tracer_ligne(data1, data2, weight){
 
   polyline.setStyle({
     color: "green", weight: poids
-  }).bindPopup("Trajet de " + data1[0].nom + " Ã  " + data2[0].nom + "<br />Nombre de personnes : " + poids);
+  }).bindPopup("Trajet de " + data1[0].nom + " à " + data2[0].nom + "<br />Nombre de personnes : " + poids);
   polyline.addTo(macarte);
 
 }
