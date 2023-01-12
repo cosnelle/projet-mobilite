@@ -35,7 +35,7 @@ async function getFlux(url){
 
   // stockage des donnees
   var data = await reponse.json();
-  console.log(data);
+
   if(reponse){
     hideloader();
   }

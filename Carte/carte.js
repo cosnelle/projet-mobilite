@@ -40,7 +40,6 @@ async function get_coordonnees(url, type){
     const reponse = await fetch(url);
     // stockage des donnees
     var data = await reponse.json();
-    console.log(data);
     if(reponse){
       hideloader();
     }
@@ -92,7 +91,7 @@ async function get_flux(url){
   const reponse = await fetch(url);
   // stockage des donnees
   var data = await reponse.json();
-  console.log(data);
+
   if(reponse){
     hideloader();
   }
@@ -121,7 +120,7 @@ async function get_coordonnees_ligne(url1, url2, weight){
     const reponse1 = await fetch(url1);
     // stockage des donnees
     var data1 = await reponse1.json();
-    console.log(data1);
+
     if(reponse1){
       hideloader();
     }
@@ -130,7 +129,7 @@ async function get_coordonnees_ligne(url1, url2, weight){
     const reponse2 = await fetch(url2);
     // stockage des donnees
     var data2 = await reponse2.json();
-    console.log(data2);
+
     if(reponse2){
       hideloader();
     }
@@ -204,21 +203,3 @@ get_lieux(url_travail, "travail");
 // ajouter les flux de deplacement
 const url_flux_dep = "http://127.0.0.1:8000/data_mobilite/geo/flux/person";
 get_flux(url_flux_dep);
-
-
-var points = [
-    [50.608194102437594, 3.145977484716809],
-    [50.531036, 2.63926]
-];
-
-
-var poids = 5;
-
-var polyline = L.polyline(points);
-var poly = L.polyline([[ 50.6278677, 3.1247218], [50.72459030151367, 3.16391921043396]]);
-polyline.setStyle({color: "red", weight: 10});
-poly.setStyle({color:"red", weight:10});
-
-var trajets  = L.layerGroup([polyline]);
-trajets = L.layerGroup([poly]);
-layerControl.addOverlay(trajets, "Trajets domicile travail");
