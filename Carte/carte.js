@@ -202,7 +202,7 @@ get_lieux(url_travail, "travail");
 // creation des traits
 
 // ajouter les flux de deplacement
-const url_flux_dep = "http://127.0.0.1:8000/geo/flux/person";
+const url_flux_dep = "http://127.0.0.1:8000/data_mobilite/geo/flux/person";
 get_flux(url_flux_dep);
 
 
