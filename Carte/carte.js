@@ -2,6 +2,8 @@
 // ensemble du code pour la creation de la carte openstreetmap
 // utilisation du framework Leaflet
 
+var hostname = "127.0.0.1";
+
 // fonction js utilisees dans ce programme
 function hideloader(){
   document.getElementById("loading").style.display = "none";
@@ -29,9 +31,7 @@ function affichage_lieux(data, type){
   for (let r of data.data){
     // recuperation des coordonnees GPS du centre de la commune de domicile
     let url_coordonnees =`https://geo.api.gouv.fr/communes?codePostal=${r}&fields=centre`;
-
     get_coordonnees(url_coordonnees, type);
-    console.log(r)
   }
 
 }
@@ -187,11 +187,11 @@ L.control.scale().addTo(macarte);
 
 // ajout des lieux de travail : universite represente par des marqueurs bleus
 // url de l api FAST API
-const url_travail = "http://127.0.0.1:8000/data_mobilite/label_colonne/INSEE_TRA";
+const url_travail = "http://"+hostname+":8000/data_mobilite/label_colonne/INSEE_TRA";
 
 // domicile des individus représenté par des zones rouges
 // url de l api FAST API
-const url_domicile = "http://127.0.0.1:8000/data_mobilite/label_colonne/INSEE_DOM";
+const url_domicile = "http://"+hostname+":8000/data_mobilite/label_colonne/INSEE_DOM";
 
 // appel fonctions
 // ajout des domiciles
@@ -203,5 +203,5 @@ get_lieux(url_travail, "travail");
 // creation des traits
 
 // ajouter les flux de deplacement
-const url_flux_dep = "http://127.0.0.1:8000/data_mobilite/geo/flux/person";
+const url_flux_dep = "http://"+hostname+":8000/data_mobilite/geo/flux/person";
 get_flux(url_flux_dep);

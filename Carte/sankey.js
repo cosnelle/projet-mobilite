@@ -1,5 +1,8 @@
 // sankey.js
-d3.json("http://127.0.0.1:8000/data_mobilite/geo/flux/sankey", function(fig){
+
+var hostname = "127.0.0.1";
+
+d3.json("http://"+hostname+":8000/data_mobilite/geo/flux/sankey", function(fig){
 
 const source = fig.links.map(
   function(index){
