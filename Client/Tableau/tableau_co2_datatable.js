@@ -1,9 +1,8 @@
 //tableau calcul GES
 // utilisation de la library dataTables qui permet de dynamiser des tableau html
 
-// CODE QUI NE FONCTIONNE PAS
 //   utilisation JQuery
-// url qui récupère les données du serveur local
+// url qui recupere les donnees du serveur local
 //var xmlhttp = new XMLHttpRequest();
 //var url_co2 = "http://127.0.0.1:8000/data_mobilite/tableau/calculCO2";
 //xmlhttp.open("GET", url_co2, true);
@@ -28,8 +27,6 @@
 //  }
 //}
 
-// autre manière sans JQuery
-
 
 const url_co2 = "http://127.0.0.1:8000/data_mobilite/tableau_DataTables/calculCO2";
 
@@ -38,7 +35,7 @@ function hideloader(){
     document.getElementById("loading").style.display = "none";
 }
 
-// fonction qui recupère les données à partir d'une URL
+// fonction qui recupere les donnees a partir d'une URL
 async function getDataCO2(url){
   // recuperation de la reponse
   const reponse = await fetch(url);
@@ -52,7 +49,7 @@ async function getDataCO2(url){
   affichageDataTable(data);
 }
 
-// fonction qui utilise la library DataTables pour affiche les données
+// fonction qui utilise la library DataTables pour affiche les donnees
 //  sous forme de tableau
 function affichageDataTable(data){
   $("#myTable").DataTable({
@@ -69,12 +66,11 @@ function affichageDataTable(data){
       {"data": "d_50_100"},
       {"data": "d__100_250"}
     ],
-    // insertion de couleur en fonction de la quantité de GES
-    //  NE FONCTIONNE PAS
+    // insertion de couleur en fonction de la quantite de GES
     "rowCallback": function(row, data, index){
       var distance = parseFloat(data[5]);
-      // selon les accords de Paris de 2019, les déplacements doivent
-      //représenter 0.3tCO2e
+      // selon les accords de Paris de 2019, les deplacements doivent
+      //representer 0.3tCO2e
       if(distance > 3000.00){
         $(row).find("td:eq(5)").css("background-color", "red");
       }
@@ -83,5 +79,5 @@ function affichageDataTable(data){
 
 }
 
-//appel pour recuperer les données et créer le tableau
+//appel pour recuperer les donnees et creer le tableau
 getDataCO2(url_co2);
