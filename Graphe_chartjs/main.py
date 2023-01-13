@@ -2,7 +2,7 @@
 from fastapi import  FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from fonction_main import *
+from fonctions_main import *
 
 import pandas as pd 
 
