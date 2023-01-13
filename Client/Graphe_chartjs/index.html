@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">  <!-- et se terminent par -->
+
+<head>
+    <meta Content-Type= "text/html", charset="utf-8" >
+    <meta name="viewport" content="width=device-width", initial-scale="1.0"> <!-- width=320 -->
+    <title>Projet Mobilité</title>
+    <!-- copier le lien pour le css -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script> <!-- Ajouter chartjs a sa page -->
+
+    <!-- Ratio veut 4 fois plus large que long -> 400, 100 -->
+    <style>   
+        .chartBox{ 
+            width: 700px;  /* controler largeur du graphe*/
+            height: 400px; /* controler hauteur des boutons*/
+            padding: 1px;
+        }
+
+      
+        .buttonBox {
+          width: 400px;
+          height: 1px;
+          display: flex;
+          justify-content: left;
+          align-items: center;
+        }
+        button {
+          padding : 5px 10px;  /* largeur/longueur bouton */
+          margin: 5px;
+          background:grey;
+          color: white;
+          border-radius: 20px;
+
+        }
+
+        .buttonBox2 {
+          width: 400px;
+          height: 800px; /* changer hauteur boutons façon séparé*/
+          display: flex;
+          justify-content: left;
+          align-items: center;
+        }
+        button {
+          padding : 5px 10px;  /* largeur/longueur bouton */
+          margin: 5px;
+          background:grey;
+          color: white;
+          border-radius: 20px;
+
+        }
+
+        .buttonBox3 {
+          width: 400px;
+          height: 0px; /* changer hauteur boutons façon séparé*/
+          display: flex;
+          justify-content: left;
+          align-items: center;
+        }
+        button {
+          padding : 5px 10px;  /* largeur/longueur bouton */
+          margin: 5px;
+          background:grey;
+          color: white;
+          border-radius: 20px;
+
+        }
+
+        
+    </style>   
+</head>
+
+<body>
+   
+    <div class="chartBox">
+      <canvas id="myChart"></canvas>
+      <canvas id="myChart2"></canvas>
+      <canvas id="myChart3"></canvas>
+    </div> 
+
+    <div class="buttonBox">
+    <button  id="person_univ_nombre">person_univ_nombre</button>
+    <button  id="person_univ_pourcent">person_univ_pourcent</button>  <!-- class="btn btn-sucess" -->
+    <button  id="mode_transport_univ_nombre"> mode_transport_univ_nombre</button> 
+    <button  id="mode_transport_univ_pourcent">mode_transport_univ_pourcent</button> 
+    <button  id="mode_transport_univ_nombre2">Autre_rep</button> 
+   </div>
+
+
+    <div class="buttonBox2">
+    <button  id="Distance_mode_transport_univ"> Distance_mode_transport_univ</button>
+    <button  id="Distance_mode_transport_univ_pourcent">Distance_mode_transport_univ_pourcent</button>      
+    <button  id="Distance_mode_transport_univ_pourcent2">Distance_mode_transport_univ_pourcent2</button> 
+    
+    </div>
+
+    <div class="buttonBox3">
+      <button  id="Co2_mode_transport_univ"> Co2_mode_transport_univ</button> 
+      <button  id="Co2_mode_transport_univ_pourcent">Co2_mode_transport_univ_pourcent</button> 
+      <button  id="Co2_mode_transport_univ_pourcent2">Co2_mode_transport_univ_pourcent2</button>     
+      </div>
+    
+    <script src ="index.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
+
+    
+</body>
+</html>
+
+
