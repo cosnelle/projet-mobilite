@@ -1,25 +1,29 @@
 // sankey.js
-d3.json('http://127.0.0.1:8000/data_mobilite/geo/flux/sankey', function(fig){
+
+var hostname = "127.0.0.1";
+
+d3.json("http://"+hostname+":8000/data_mobilite/geo/flux/sankey", function(fig){
+
 
 const source = fig.links.map(
   function(index){
     return index.source;
-  })
+  });
 
 const target = fig.links.map(
   function(index){
     return index.target;
-  })
+  });
 
 const value = fig.links.map(
   function(index){
     return index.value;
-  })
+  });
 
 // fonction qui genere un vecteur de couleurs a partir d un nombre de noeuds
 function generateRandomColors(nbNodes) {
   let colors= [];
-  
+
   for (var i = 0; i < nbNodes; i++) {
     // rgba
     var r = Math.floor(Math.random() * 256);
@@ -33,9 +37,6 @@ function generateRandomColors(nbNodes) {
 
 // appel de la fonction generateRandomColors()
 let color_random = generateRandomColors(fig.nodes.length);
-
-console.log(color_random);
-console.log(source);
 
 // creation vecteur de couleur des liens en fonction de la source
 let links_color_source = [];
@@ -71,17 +72,17 @@ var data = {
   orientation: "h",
   valuesuffix: "Personnes",
   node: {
-    pad: 15,
-    thickness: 15,
+    pad: 0.1,
+    thickness: 0.1,
     line: {
-      width: 0.5
+      width: 0.01
     },
    label: fig.nodes,
    color: color_random
       },
 
   link: {
-    source: source, 
+    source: source,
     target: target,
     value: value,
     opacity: 0.1,
@@ -93,17 +94,16 @@ var data = [data]
 
 // configuration du graphe
 var layout = {
-  title: "Les flux de déplacement du personnels et des étudiants de l'Université de Lille",
-  width: 1118,
-  height: 772,
+  title: "Les flux de dÃ©placement du personnels et des Ã©tudiants de l'UniversitÃ© de Lille",
+  width: 1000,
+  height: 1000,
   font: {
-    size: 10,
+    size: 9,
     color: "black"
   }
 }
 
-Plotly.newPlot('my_dataviz', data, layout)
+Plotly.newPlot("my_dataviz", data, layout)
 
 
 });
-
