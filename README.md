@@ -18,6 +18,12 @@ Cette archive contient plusieurs répertoires:
 - Le répertoire **Documents** regroupe les documents rédigés pendant notre projet : Compte-rendu de réunion (CR), cahier des charges, rapport intermédiaire;
 - Le répertoire **Serveur** contient API REST utilisé.
 
-## Utilisation API
+## Site de visualisation
 
-Nous avons utilisé une API en locale sur une machine pour fournir des données aux graphiques. L'API REST que nous avons utilisé est fastAPI. Les commandes de lancement sont disponibles dans le répertoire **API**.
+Afin de visualiser les graphiques réalisés, vous pouvez mettre en place en local un serveur web de visualisation. Pour cela, il faut télécharger les répertoires **Client** et **Serveur**.
+Lancement de la commande suivante sur le port 3000:
+`` python 3 http serveur``
+Cette commande va permettre d'affciher les pages du serveur web.  
+Parallèlement il faut aussi lancer la commande suivante sur un port différent par exemple le port 8000:
+``python 3 http serveur``
+Cette commande peremet de lancer en local l'API, pour la suite le l'initialisation de l'API il faut se rendre dans le README.md du répertoire Serveur.
