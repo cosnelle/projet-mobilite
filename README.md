@@ -21,9 +21,9 @@ Cette archive contient plusieurs répertoires:
 ## Site de visualisation
 
 Afin de visualiser les graphiques réalisés, vous pouvez mettre en place en local un serveur web de visualisation. Pour cela, il faut télécharger les répertoires **Client** et **Serveur**.
-Lancement de la commande suivante sur le port 3000:
-`` python 3 http serveur``
+Lancement de la commande suivante sur le port 3000:  
+`` python 3 http serveur``  
 Cette commande va permettre d'affciher les pages du serveur web.  
-Parallèlement il faut aussi lancer la commande suivante sur un port différent par exemple le port 8000:
-``python 3 http serveur``
+Parallèlement il faut aussi lancer la commande suivante sur un port différent par exemple le port 8000:  
+``python 3 http serveur``  
 Cette commande peremet de lancer en local l'API, pour la suite le l'initialisation de l'API il faut se rendre dans le README.md du répertoire Serveur.
