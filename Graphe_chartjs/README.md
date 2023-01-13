@@ -1,4 +1,4 @@
-Ce repertoire est constitué de 4 fichiers:
+Ce repertoire est constitué de 2 fichiers:
 
 
 **index.html** : Contenant le code html pour lancer des différents graphique sur un serveur local.      
