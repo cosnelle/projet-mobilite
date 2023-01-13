@@ -152,7 +152,7 @@ function tracer_ligne(data1, data2, weight){
 
   polyline.setStyle({
     color: "green", weight: poids
-  }).bindPopup("Trajet de " + data1[0].nom + " � " + data2[0].nom + "<br />Nombre de personnes : " + poids);
+  }).bindPopup("Trajet de " + data1[0].nom + " à " + data2[0].nom + "<br />Nombre de personnes : " + poids);
   polyline.addTo(macarte);
 
 }
@@ -170,7 +170,7 @@ var macarte= null;
 //initialisation de la carte
 macarte = L.map("map").setView([lat, lon], 9);
 osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                    attribution: 'données <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                    attribution: 'donnÃ©es <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
                     minZoom: 5,
                     maxZoom: 20
 });
@@ -189,7 +189,7 @@ L.control.scale().addTo(macarte);
 // url de l api FAST API
 const url_travail = "http://"+hostname+":8000/data_mobilite/label_colonne/INSEE_TRA";
 
-// domicile des individus représenté par des zones rouges
+// domicile des individus reprÃ©sentÃ© par des zones rouges
 // url de l api FAST API
 const url_domicile = "http://"+hostname+":8000/data_mobilite/label_colonne/INSEE_DOM";
 
@@ -203,5 +203,7 @@ get_lieux(url_travail, "travail");
 // creation des traits
 
 // ajouter les flux de deplacement
+
 const url_flux_dep = "http://"+hostname+":8000/data_mobilite/geo/flux/person";
+
 get_flux(url_flux_dep);
