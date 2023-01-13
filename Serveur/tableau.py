@@ -50,7 +50,7 @@ def discretisation(df):
 def calcul_ges(df):
     # creation nouvelle colonne qui accueuil le calcul des GES
     #   INITIALISATION a 0
-    df_nouv = df.assign(Calcul_GES=1)
+    df_nouv = df.assign(Calcul_GES=0)
     nb_jour = 205
     nb_trajet = 2
     # Parcourir toute la base de donnees pour faire le calcul pour chq indiv
@@ -76,12 +76,12 @@ def calcul_ges(df):
                 nb_jour * nb_trajet * getCO2Train(df_nouv.Distance[i])
             )
 
-        elif df_nouv.Mode[i] == "Trotinette/Autre":
+        elif df_nouv.Mode[i] == "Trottinette/Autre":
             df_nouv.loc[i, "Calcul_GES"] = (
                 nb_jour * nb_trajet * getCO2Trotinette(df_nouv.Distance[i])
             )
 
-        elif df_nouv.Mode[i] == "Voiture essence":
+        elif df_nouv.Mode[i] == "Voiture":
             df_nouv.loc[i, "Calcul_GES"] = (
                 nb_jour * nb_trajet * getCO2CarOil(df_nouv.Distance[i])
             )
@@ -96,7 +96,7 @@ def calcul_ges(df):
                 nb_jour * nb_trajet * getCO2Velo(df_nouv.Distance[i])
             )
             
-        elif df_nouv.Mode[i] == "Deux-roues motoris\u00e9":
+        elif df_nouv.Mode[i] == "Deux-roues motoris\u00e9es":
             df_nouv.loc[i, "Calcul_GES"] = (
                 nb_jour * nb_trajet * getCO2Moto(df_nouv.Distance[i])
             )
