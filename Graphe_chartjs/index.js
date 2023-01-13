@@ -1,4 +1,6 @@
-const API_URL = "http://127.0.0.1:8000/Nombre_mode_transport_univ"
+var hostname = "127.0.0.1"
+const API_URL = "http://"+hostname+":8000/Nombre_mode_transport_univ"
+
 fetch(API_URL) 
    .then(res => res.json())         //recupère données format json qui sera ensuite appélé JSONdata         
    .then( JSONdata => {
@@ -314,7 +316,7 @@ fetch(API_URL)
 
   /********  graphe Distance *******/
 
-  const API_URL2 = "http://127.0.0.1:8000/Distance_mode_transport_univ_km"
+  const API_URL2 = "http://"+hostname+":8000/Distance_mode_transport_univ_km"
   fetch(API_URL2) 
      .then(res => res.json())         //recupère données format json qui sera ensuite appélé JSONdata         
      .then( JSONdata => {
@@ -580,7 +582,7 @@ fetch(API_URL)
     
   /********  graphe Co2 *******/
     
-  const API_URL3 = "http://127.0.0.1:8000/Emission_Co2_mode_transport_univ_kgCo2"
+  const API_URL3 = "http://"+hostname+":8000/Emission_Co2_mode_transport_univ_kgCo2"
   fetch(API_URL3) 
      .then(res => res.json())         //recupère données format json qui sera ensuite appélé JSONdata         
      .then( JSONdata => {
