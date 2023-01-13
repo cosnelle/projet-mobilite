@@ -2,11 +2,12 @@
 // ensemble du code pour la creation de la carte openstreetmap
 // utilisation du framework Leaflet
 
-var hostname = "127.0.0.1";
+var hostname ="127.0.0.1";
+
 
 // fonction js utilisees dans ce programme
 function hideloader(){
-  document.getElementById("loading").style.display = "none";
+  document.getElementById('loading').style.display = 'none';
 }
 
 // fonction qui recupere les codes postaux de tous les domiciles renseignes dans la salle
@@ -16,6 +17,7 @@ async function get_lieux(url,type){
   const reponse = await fetch(url);
   // stockage des donnees
   var data = await reponse.json();
+  console.log(data);
   if(reponse){
     hideloader();
   }
@@ -30,10 +32,11 @@ function affichage_lieux(data, type){
   // boucle d affichage des domiciles
   for (let r of data.data){
     // recuperation des coordonnees GPS du centre de la commune de domicile
-    let url_coordonnees =`https://geo.api.gouv.fr/communes?codePostal=${r}&fields=centre`;
+    let url_coordonnees =`https://geo.api.gouv.fr/communes?codePostal=${r}&fields=centre`; 
     get_coordonnees(url_coordonnees, type);
+    console.log(r)
   }
-
+  
 }
 
 // fonction qui recupere les coordonnees GPS du centre d une commune
@@ -42,6 +45,7 @@ async function get_coordonnees(url, type){
     const reponse = await fetch(url);
     // stockage des donnees
     var data = await reponse.json();
+    console.log(data);
     if(reponse){
       hideloader();
     }
@@ -51,7 +55,7 @@ async function get_coordonnees(url, type){
     } else if(type == "travail"){
       new_marker(data);
     } else if (type == "points"){
-
+      
     }
 }
 
@@ -62,11 +66,11 @@ function new_circle(data){
   let lat = data[0].centre.coordinates[1];
   let long = data[0].centre.coordinates[0];
   let nom_ville = data[0].nom;
-
+  
   var new_ville = L.circle([lat, long], {
-    color: "red",
+    color: 'red',
     fillOpacity: 0.5,
-    fillColor: "#f03",
+    fillColor: '#f03',
     radius: 2500
   }).bindPopup(nom_ville);
   // ajout du cercle a la carte
@@ -76,7 +80,7 @@ function new_circle(data){
 // fonction de creation d un marqueur bleu
 //   qui represente un lieu de travail = universite
 function new_marker(data){
-  // coordonnees GPS + nom de la commune
+  // coordonnees GPS + nom de la commune 
   let lat = data[0].centre.coordinates[1];
   let long = data[0].centre.coordinates[0];
   let nom_ville = data[0].nom;
@@ -93,27 +97,27 @@ async function get_flux(url){
   const reponse = await fetch(url);
   // stockage des donnees
   var data = await reponse.json();
-
+  console.log(data);
   if(reponse){
     hideloader();
   }
-
+  
   init_tracer_ligne(data);
 }
 
-// fonction d initialisation
+// fonction d initialisation 
 function init_tracer_ligne(data){
-
+  
   for (let r of data.data){
     let url_coordonnees_domicile =`https://geo.api.gouv.fr/communes?codePostal=${r.domicile}&fields=centre`;
     let url_coordonnees_travail =`https://geo.api.gouv.fr/communes?codePostal=${r.travail}&fields=centre`;
-
-    let poids = r.Nb_person;
+    
+    let poids = r.Nb_person; 
     get_coordonnees_ligne(url_coordonnees_domicile, url_coordonnees_travail, poids);
-
+    
   }
   //layerControl.addOverlay(trait_nb_person, "Trajets en fonction du nombre de personnes");
-
+  
 }
 
 // fonction qui recupere deux coordonnees GPS
@@ -122,22 +126,22 @@ async function get_coordonnees_ligne(url1, url2, weight){
     const reponse1 = await fetch(url1);
     // stockage des donnees
     var data1 = await reponse1.json();
-
+    console.log(data1);
     if(reponse1){
       hideloader();
     }
-
+    
     // recuperation de la reponse2
     const reponse2 = await fetch(url2);
     // stockage des donnees
     var data2 = await reponse2.json();
-
+    console.log(data2);
     if(reponse2){
       hideloader();
     }
-
+    
     tracer_ligne(data1, data2, weight);
-
+    
 }
 
 // fonction qui trace un trait
@@ -149,12 +153,12 @@ function tracer_ligne(data1, data2, weight){
     [data1[0].centre.coordinates[1], data1[0].centre.coordinates[0]],
     [data2[0].centre.coordinates[1], data2[0].centre.coordinates[0]]
     ]);
-
+    
   polyline.setStyle({
-    color: "green", weight: poids
+    color: 'green', weight: poids
   }).bindPopup("Trajet de " + data1[0].nom + " à " + data2[0].nom + "<br />Nombre de personnes : " + poids);
   polyline.addTo(macarte);
-
+  
 }
 
 
@@ -166,22 +170,22 @@ function tracer_ligne(data1, data2, weight){
 var lat = 50.366669;
 var lon =  3.06667;
 var macarte= null;
-
+          
 //initialisation de la carte
-macarte = L.map("map").setView([lat, lon], 9);
-osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                    attribution: 'donnÃ©es <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+macarte = L.map('map').setView([lat, lon], 9);
+osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: 'données <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
                     minZoom: 5,
                     maxZoom: 20
 });
 osm.addTo(macarte);
-
+                
 // creation couches
 var baseMaps = {"OpenStreetMap": osm};
-
+            
 // Layers control
 var layerControl = L.control.layers(baseMaps).addTo(macarte);
-
+            
 //ajout d une echelle cartographique
 L.control.scale().addTo(macarte);
 
@@ -189,7 +193,7 @@ L.control.scale().addTo(macarte);
 // url de l api FAST API
 const url_travail = "http://"+hostname+":8000/data_mobilite/label_colonne/INSEE_TRA";
 
-// domicile des individus reprÃ©sentÃ© par des zones rouges
+// domicile des individus represente par des zones rouges
 // url de l api FAST API
 const url_domicile = "http://"+hostname+":8000/data_mobilite/label_colonne/INSEE_DOM";
 
@@ -203,7 +207,5 @@ get_lieux(url_travail, "travail");
 // creation des traits
 
 // ajouter les flux de deplacement
-
 const url_flux_dep = "http://"+hostname+":8000/data_mobilite/geo/flux/person";
-
 get_flux(url_flux_dep);
