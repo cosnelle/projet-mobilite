@@ -12,7 +12,7 @@
             {
                 "name": "Mode",
                 "type": "string"
-            },
+            },  
             {
                 "name": "Distance",
                 "type": "number"

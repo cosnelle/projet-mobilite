@@ -13,7 +13,7 @@ def mode_transport(objet) :
        liste = []
     return liste_Mode_transport
 
-def liste_universite(objet):
+def liste_universite(objet):  
 
     liste_universite =  []
     for i in range(len(list(objet.groups))):  #list(res.groups) retourne la liste des université
