@@ -17,7 +17,7 @@ async function get_lieux(url,type){
   const reponse = await fetch(url);
   // stockage des donnees
   var data = await reponse.json();
-  console.log(data);
+
   if(reponse){
     hideloader();
   }
@@ -34,7 +34,7 @@ function affichage_lieux(data, type){
     // recuperation des coordonnees GPS du centre de la commune de domicile
     let url_coordonnees =`https://geo.api.gouv.fr/communes?codePostal=${r}&fields=centre`; 
     get_coordonnees(url_coordonnees, type);
-    console.log(r)
+
   }
   
 }
@@ -45,7 +45,7 @@ async function get_coordonnees(url, type){
     const reponse = await fetch(url);
     // stockage des donnees
     var data = await reponse.json();
-    console.log(data);
+
     if(reponse){
       hideloader();
     }
@@ -97,7 +97,7 @@ async function get_flux(url){
   const reponse = await fetch(url);
   // stockage des donnees
   var data = await reponse.json();
-  console.log(data);
+
   if(reponse){
     hideloader();
   }
@@ -109,11 +109,14 @@ async function get_flux(url){
 function init_tracer_ligne(data){
   
   for (let r of data.data){
-    let url_coordonnees_domicile =`https://geo.api.gouv.fr/communes?codePostal=${r.domicile}&fields=centre`;
-    let url_coordonnees_travail =`https://geo.api.gouv.fr/communes?codePostal=${r.travail}&fields=centre`;
+
+    if(r.domicile != r.travail){
+      let url_coordonnees_domicile =`https://geo.api.gouv.fr/communes?codePostal=${r.domicile}&fields=centre`;
+      let url_coordonnees_travail =`https://geo.api.gouv.fr/communes?codePostal=${r.travail}&fields=centre`;
     
-    let poids = r.Nb_person; 
-    get_coordonnees_ligne(url_coordonnees_domicile, url_coordonnees_travail, poids);
+      let poids = r.Nb_person; 
+      get_coordonnees_ligne(url_coordonnees_domicile, url_coordonnees_travail, poids);
+    }
     
   }
   //layerControl.addOverlay(trait_nb_person, "Trajets en fonction du nombre de personnes");
@@ -126,7 +129,7 @@ async function get_coordonnees_ligne(url1, url2, weight){
     const reponse1 = await fetch(url1);
     // stockage des donnees
     var data1 = await reponse1.json();
-    console.log(data1);
+
     if(reponse1){
       hideloader();
     }
@@ -135,7 +138,7 @@ async function get_coordonnees_ligne(url1, url2, weight){
     const reponse2 = await fetch(url2);
     // stockage des donnees
     var data2 = await reponse2.json();
-    console.log(data2);
+
     if(reponse2){
       hideloader();
     }
@@ -205,7 +208,4 @@ get_lieux(url_travail, "travail");
 
 
 // creation des traits
-
-// ajouter les flux de deplacement
-const url_flux_dep = "http://"+hostname+":8000/data_mobilite/geo/flux/person";
-get_flux(url_flux_dep);
+// lancement depuis le button sur le fichier index.html
