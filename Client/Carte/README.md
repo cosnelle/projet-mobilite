@@ -1,28 +1,26 @@
-Nous sommes deux Ã©tudiantes Ã  Polytech. Ce dÃ©pot nous permet de rendre compte du travail que nous rÃ©alisons pour le projet ingÃ©nieur.
 
+## Description du contenu du rÃ©pertoire
 
-## Description du contenu du répertoire
-
-Nous retrouvons dans le répertoire Cartographie, l'ensemble des graphiques nécessaires à la modélisation des flux de déplacement des individus ayant répondu à l'enquête mobilité. Ce répertoire est composé de programmes html et js. Les programmes html, nous permettent de visualiser le code Javascript. Les programmes js permettent de créer les graphiques et autres éléments nécessaires à l'analyse de la mobilité des individus.  
+Nous retrouvons dans le rÃ©pertoire Cartographie, l'ensemble des graphiques nÃ©cessaires Ã  la modÃ©lisation des flux de dÃ©placement des individus ayant rÃ©pondu Ã  l'enquÃªte mobilitÃ©. Ce rÃ©pertoire est composÃ© de programmes html et js. Les programmes html, nous permettent de visualiser le code Javascript. Les programmes js permettent de crÃ©er les graphiques et autres Ã©lÃ©ments nÃ©cessaires Ã  l'analyse de la mobilitÃ© des individus.  
 Les fichiers disponibles sont les suivants :  
 
 - carte.js  
-Ce code JavaScript permet la création d'une carte visualisant les lieux de domicile, de travail et les flux de déplacement entre ces deux lieux. Pour cela, nous avons utilisé la librarie [Leaflet](https://leafletjs.com/) et le support de carte de [OpenStreetMap](https://www.openstreetmap.fr/).  
-Sur la carte, nous retrouvons des marqueurs bleus qui représentent les lieux de travail (autrement dit les universités), les cercles rouges correspondent au lieux supposés de domicile et les traits verts représentent les flux de déplacement entre ces deux lieux. Le trait est donc plus ou moins épais en fonction du nombre de personnes empruntant ce trajet.  
+Ce code JavaScript permet la crÃ©ation d'une carte visualisant les lieux de domicile, de travail et les flux de dÃ©placement entre ces deux lieux. Pour cela, nous avons utilisÃ© la librarie [Leaflet](https://leafletjs.com/) et le support de carte de [OpenStreetMap](https://www.openstreetmap.fr/).  
+Sur la carte, nous retrouvons des marqueurs bleus qui reprÃ©sentent les lieux de travail (autrement dit les universitÃ©s), les cercles rouges correspondent aux lieux supposÃ©s de domicile et les traits verts reprÃ©sentent les flux de dÃ©placement entre ces deux lieux. Le trait est donc plus ou moins Ã©pais en fonction du nombre de personnes empruntant ce trajet.  
 
 - tableau.js  
-Ce code JavaScript permet de créer un tableau présentant les déplacements des individus. Sur la première colonne nous retrouvons le code Postal du lieu de domicile, sur la deuxième colonne nous retrouvons le lieu de travail et la dernière colonne nous donne le nombre de personnes qui font ce trajet.  
+Ce code JavaScript permet de crÃ©er un tableau prÃ©sentant les dÃ©placements des individus. Sur la premiÃ¨re colonne, nous retrouvons le code postal du lieu de domicile, sur la deuxiÃ¨me colonne nous retrouvons le lieu de travail et la derniÃ¨re colonne nous donne le nombre de personnes qui font ce trajet.  
 
 - sankey.js  
-Ce code JavaScript permet de créer un diagramme de Sankey (diagramme représentant des flux entre une source et une cible : [Wikipedia](https://fr.wikipedia.org/wiki/Diagramme_de_Sankey)). Nous avons utilisé la librarie [Plotly](https://plotly.com/javascript/) qui possède une implémentation du diagramme de Sankey. Pour créer ce diagramme nous utilisons donc la fonction suivante :  
+Ce code JavaScript permet de crÃ©er un diagramme de Sankey (diagramme reprÃ©sentant des flux entre une source et une cible : [Wikipedia](https://fr.wikipedia.org/wiki/Diagramme_de_Sankey)). Nous avons utilisÃ© la librarie [Plotly](https://plotly.com/javascript/) qui possÃ©de une implÃ©mentation du diagramme de Sankey. Pour crÃ©er ce diagramme nous utilisons donc la fonction suivante :  
 `Plotly.newPlot('mon_graphique', data, layout)`  
-Et nous précisons dans **data** le type de graphique utilisé :  
+Et nous prÃ©cisons dans **data** le type de graphique utilisÃ© :  
 ` var data = {type: "sankey",.... }`   
-` var data = [data]`
+` var data = [data]`  
 
+- index_carte.html
+Cette page html permet l'affichage de la carte des universitÃ©s et lieux de domicile des personnes ayant rÃ©pondues Ã  l'enquÃªte "mobilitÃ©".
+Au chargement de la page, des marqueurs apparaissent sur la carte. Les marqueurs bleus correspondent aux universitÃ©s. Les cercles rouges correpondent au lieu de domicile. Les cercles font deux kilomÃ¨tres de rayon. Le centre du cercle correpond aux coordonnÃ©es de centre de la ville. Les coordonnÃ©es sont donnÃ©es par l'api gouvernementale [geo api](https://geo.api.gouv.fr/). Il est possible d'ajouter en vert les trajets entre le lieu de domicile et l'universitÃ© de destination. Pour cela, il suffit d'appuyer sur le bouton "Flux de dÃ©placement".
 
-## API utilisée
-
-Dans cette partie, nous verrons les routes utilisées dans l'API pour créer ces représentations graphiques. En effet, les données ne comportent pas de coordonnées géographiques nécessaires à la représentation de cartographie.  
-
-A venir ...
+- index_sankey.html
+Cette page html permet l'affichage d'un graphique nommÃ© sankey. Ce diagramme des flux de dÃ©placements montre les diffÃ©rents trajets empruntÃ©s par les personnes ayant rÃ©pondues Ã  l'enquÃªte mobilitÃ©. Ce graphique est affichÃ© Ã  l'aide d'un bibliothÃ¨que Plotly.
