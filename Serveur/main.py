@@ -9,7 +9,7 @@
 from fastapi import  FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from fonctions_main import *
+from graphe_chartjs import *
 from valeur_colonne import *
 from cartographie import *
 from tableau import *
@@ -41,26 +41,28 @@ app.add_middleware(
 async def home():
     return {"message": "Projet mobilité"}
 
+#service pour recupérer les données bruts
 @app.get("/data_mobilite")
-async def getData_mobilite():
-    file = open('fake-data-v2.json')   #Avoir un fichier data_mobilite_json dans le même répertoire
+async def getdata_mobilite():
+    file = open('fake-data-v2.json')   
     return json.load(file)
 
 
-@app.get("/Nombre_mode_transport_univ")  
-async def get_Nombre_mode_transport_univ():
-    file = Nombre_mode_transport_univ(df)
+@app.get("/nombre_mode_transport_univ")  
+async def get_nombre_mode_transport_univ():
+    file = nombre_mode_transport_univ(df)
     return file
 
 
-@app.get("/Distance_mode_transport_univ_km")  
+@app.get("/distance_mode_transport_univ_km")  
 async def get_mode_transport_univ():
-    file = Distance_mode_transport_univ(df)
+    file = distance_mode_transport_univ(df)
     return file
 
-@app.get("/Emission_Co2_mode_transport_univ_kgCo2")  
-async def get_Emission_Co2_mode_transport_univ():
-    file = Emission_Co2_mode_transport_univ(df)
+
+@app.get("/emission_co2_mode_transport_univ_kgCo2")  
+async def get_emission_Co2_mode_transport_univ():
+    file = emission_co2_mode_transport_univ(df)
     return file
 
     
