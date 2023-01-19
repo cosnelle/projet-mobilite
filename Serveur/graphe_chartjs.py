@@ -3,31 +3,33 @@
 # Contributeurs : Cosnelle DJOUMEKOUM & Julie RIDOLFI
 #####################################################
 
-# main.py
+#graphe_chartjs.py
+
+# import library
 import json
 from jsonmerge import merge
 import pandas as pd 
-  
-#fonction commun pour création des différentes routes
-def mode_transport(objet) :
 
+
+#fonction commun pour création des différents services
+def mode_transport(objet) :
     liste_Mode_transport, liste = [],[]
     for i in range (len(list(objet.groups))):
        liste = list(objet)[i][1].sort_values(["Mode"])["Mode"].tolist()
        liste_Mode_transport.append(liste)
        liste = []
     return liste_Mode_transport
-   
-def liste_universite(objet):    
 
+
+def liste_universite(objet):
     liste_universite =  []
     for i in range(len(list(objet.groups))):  #list(res.groups) retourne la liste des université
            universite = list(objet)[i][0]  #list(res) retourne la liste des différents groupe formé lors de l'aggrégation
            liste_universite.append(universite)
     return liste_universite 
 
+
 def liste_data(objet, colonne : str):
-    
     liste_data = []
     for i in range(len(list(objet.groups))):  #list(res.groups) retourne la liste des université
            liste_data_univ = list(objet)[i][1].sort_values(["Mode"])[colonne].tolist()
@@ -37,7 +39,6 @@ def liste_data(objet, colonne : str):
 
  #Création données JSON pour chaque université
 def format_json(objet, colonne):
-
     univ, y =  [None]*len(liste_universite(objet)), {}  
     for i in range(len(liste_universite(objet))): 
           for j in range (len(liste_data(objet, colonne)[i])):   
@@ -45,54 +46,45 @@ def format_json(objet, colonne):
              y = merge(y, x)
           univ[i] = y
           y = {}
-    
     liste_univ_data, w  = [], {}
     for i in range(len(liste_universite(objet))): 
         z = {liste_universite(objet)[i] : (univ[i])}
         w = merge(w, z)
         liste_univ_data.append(w)
         w = {}
-       
     data = { "data" : liste_univ_data }
     return data  
  
 
 
 ######## Fonction nombre mode de transport univ
- 
-def Nombre_mode_transport_univ(frame):
-
+def nombre_mode_transport_univ(frame):
     #Aggrégation mode de transport pour chaque université
     res = pd.DataFrame(frame.groupby(["Etablissement"], as_index = False)["Mode"].value_counts()) #Dataframe
     res = res.groupby("Etablissement") #transformer le dataframe en un DataframeGroupby(liste) objet afin de pouvoir récupérer les différents groupes
-     
     #Création données JSON pour chaque université
     data = format_json(res,"count" )
-
     return data
 
 
 
 
 ############### Fonction Distance(en km) mode de transport univ
-
-def Distance_mode_transport_univ(frame):
-    
+def distance_mode_transport_univ(frame):
     #Aggrégation Distance pour chaque mode de transport et université 
     res = pd.DataFrame(frame.groupby(["Etablissement", "Mode"], as_index = False)["Distance"].sum()) 
     res = res.groupby("Etablissement")
-    
     #Création données JSON pour chaque université
     data = format_json(res, "Distance")
-
     return data  
 
 
 ########## Fonction Emission Co2(en kgCO2) mode de transport univ par année.
-#(mutipliaction par 205 pour avoir l'emission par année )
+#(mutipliaction par 205 pour avoir l'emission par année ) et 2 pour avoir deux trajets(aller/retour)
 
 def fonction_Co2(str, distance):
     Co2 = 0
+
     def getCO2Autre(distance):   #pour l'instant on prend 0 pour la catégorie Autre
         return round( 2*205*0*distance,4) #Emission par année
 
@@ -169,22 +161,17 @@ def fonction_Co2(str, distance):
     return Co2
 
 
-def Emission_Co2_mode_transport_univ(frame):
-        
+def emission_co2_mode_transport_univ(frame):
     #Aggrégation Distance pour chaque mode de transport et université 
     res = pd.DataFrame(frame.groupby(["Etablissement", "Mode"], as_index = False)["Distance"].sum()) 
     res = res.groupby("Etablissement")
-    
     liste_data_Co2 = []
     Co2_km_mode_transport = []
     for i in range(len(mode_transport(res))):
       for j in range (len(liste_data(res,"Distance")[i])):     
            Co2_km_mode_transport.append(fonction_Co2(mode_transport(res)[i][j], liste_data(res,"Distance" )[i][j])) #appel des fonction si dessus sur les distance
-    
       liste_data_Co2.append(Co2_km_mode_transport)  ##Creation d'une liste de liste contenant les valeurs Co2 par mode de transport  pour différents université  
       Co2_km_mode_transport = []
-    
-    
    #Création données JSON pour chaque université
     univ, y =  [None]*len(liste_universite(res)), {}  
     for i in range(len(liste_universite(res))): 
@@ -193,17 +180,28 @@ def Emission_Co2_mode_transport_univ(frame):
                  y = merge(y, x)
               univ[i] = y
               y = {}
-        
     liste_univ_data, w  = [], {}
     for i in range(len(liste_universite(res))): 
             z = {liste_universite(res)[i] : (univ[i])}
             w = merge(w, z)
             liste_univ_data.append(w)
             w = {}
-           
             data = { "data" : liste_univ_data }  
-
     return data
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
 
 
 
