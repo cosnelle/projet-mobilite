@@ -13,15 +13,18 @@ from fonctions_main import *
 from valeur_colonne import *
 from cartographie import *
 from tableau import *
+from calcul import *
 
 import pandas as pd 
 import json
 import numpy as np
 
+
 # importation du fichier de donnees utilisees
 df = pd.read_json("fake-data-v2.json", orient="table")
 # ajout d'une colonne au data frame pour pouvoir faire les aggregations
 df=df.assign(Usagers = 1.0)
+
 
 app = FastAPI()  #créer un objet FastAPI
 
@@ -117,8 +120,4 @@ async def get_calculCO2_mode_distance():
 async def get_mode_distance_co2():
     res = get_ges_for_tab(df)
     return res
-
-
-
-
 

@@ -1,9 +1,23 @@
-
+<!DOCTYPE HTML>
+<!--index html qui utilise plotly et qui permet de faire une heatmap du tableau de la quantite
+de GES annuel pour un personne-->
 <html>
 
   <head>
     <meta charset="ISO 8859-1">
     <title>Heatmap</title>
+    <!--Importation du de le library datatables avec CSS correspondant-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css" />
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+    <link href="http://127.0.0.1:3000/Client/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- CSS du template -->
+    <link href="http://127.0.0.1:3000/Client/blog.css" rel="stylesheet">
+
     <!-- Plotly -->
     <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
     <!-- CSS -->
@@ -13,18 +27,51 @@
         height: 500px;
       }
     </style>
+
   </head>
 
-
   <body>
-    <!-- Load d3.js -->
-    <script src="https://d3js.org/d3.v4.js"></script>
+    
+    <div class="container">
+      <header class="blog-header lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div>
+            <img src="http://127.0.0.1:3000/Client/polytech.png" alt="LogoPolytech" width=30% height=30% />
+            <img src="http://127.0.0.1:3000/Client/univ.jpg" alt="LogoUniv" width=30% height=30% style="float:right;" />
+            <h1>Projet ingénieur</h1>
+            <h2> Visualisation des données
+              issues de l'enquête mobilité de l'Université de Lille</h2>
+          </div>
+        </div>
+      </header>
 
-    <!-- Heatmap-->
-    <div id="heatmap">
-      <div id="myDiv"></div>
-      <script src="heatmap.js"></script>
+      <!--Liens vers les graphiques-->
+      <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+          <a class="p-2 link-secondary" href="http://127.0.0.1:3000/Client/index.html">Accueil</a>
+          <a class="p-2 link-secondary" href="http://127.0.0.1:3000/Client/Graphe_chartjs/index.html">Graphiques en barre</a>
+          <a class="p-2 link-secondary" href="http://127.0.0.1:3000/Client/Carte/index.html">Carte</a>
+          <a class="p-2 link-secondary" href="http://127.0.0.1:3000/Client/Carte/index_sankey.html">Sankey</a>
+          <a class="p-2 link-secondary" href="http://127.0.0.1:3000/Client/Tableau/index.html">Tableau</a>
+        </nav>
+      </div>
     </div>
+
+    <div align="center">
+      <!-- Load d3.js -->
+      <script src="https://d3js.org/d3.v4.js"></script>
+
+      <!-- Heatmap-->
+      <div id="heatmap">
+        <div id="myDiv"></div>
+        <script src="heatmap.js"></script>
+      </div>
+    </div>
+
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    </footer>
 
   </body>
 
