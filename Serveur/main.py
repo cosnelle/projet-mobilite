@@ -54,13 +54,13 @@ async def get_nombre_mode_transport_univ():
     return file
 
 
-@app.get("/distance_mode_transport_univ_km")  
-async def get_mode_transport_univ():
+@app.get("/distance_mode_transport_univ_trajet_km")  
+async def get_distance_mode_transport_univ():
     file = distance_mode_transport_univ(df)
     return file
 
 
-@app.get("/emission_co2_mode_transport_univ_kgCo2")  
+@app.get("/emission_co2_mode_transport_univ_annee_kgCo2")  
 async def get_emission_Co2_mode_transport_univ():
     file = emission_co2_mode_transport_univ(df)
     return file
