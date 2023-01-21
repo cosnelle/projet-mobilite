@@ -2,7 +2,8 @@ Ce repertoire est constitué de 2 fichiers:
 
 
 **index.html** : Contenant le code html pour lancer des différents graphique sur un serveur local.      
-**index.js** : qui contient le code pour créer les différents graphiques chartjs en javascript    
+**index.js** : qui contient le code pour créer les différents graphiques chartjs en javascript   
+**config_functions.JS** : qui contient le code commun pour la création des différents graphes
 
 le fichier index.html fait appel au fichier index.js  
 
