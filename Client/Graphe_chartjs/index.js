@@ -256,7 +256,7 @@ fetch(API_URL2)
         
         const config = this.config(data1);
        
-       // config.options.plugin.title.text = Pourcentage distance total (en km) mode de transport par université sur un trajet;
+       // config.options.plugin.title.text = Pourcentage distance totale (en km) mode de transport par université sur un trajet;
 
         const myChart2 = new Chart(  // creation du graphe
           document.getElementById('myChart2'), 
@@ -313,7 +313,7 @@ fetch(API_URL2)
              const updatetype ="bar";
              myChart2.config.type = updatetype;
              myChart2.config.data = data2;
-             myChart2.config.options.plugins.title.text = "Pourcentage distance total (en km) mode de transport par université sur un trajet";
+             myChart2.config.options.plugins.title.text = "Pourcentage distance totale (en km) mode de transport par université sur un trajet";
              myChart2.config.options.plugins.tooltip.callbacks.label =  (context) => { return context.dataset.label + ':' + ' ' + context.parsed.y  + '%' } ;  
              myChart2.config.options.plugins.autocolors.mode = "dataset";  // a new color is picked for each dataset 
              myChart2.config.options.plugins.autocolors.offset = 1;
@@ -331,7 +331,7 @@ fetch(API_URL2)
              const updatetype ="bar";
              myChart2.config.type = updatetype;
              myChart2.config.data = data3;
-             myChart2.config.options.plugins.title.text = "Pourcentage distance total (en km) mode de transport par université ";
+             myChart2.config.options.plugins.title.text = "Pourcentage distance totale (en km) mode de transport par université ";
              myChart2.config.options.plugins.tooltip.callbacks.label =  (context) => { return context.dataset.label + ':' + ' ' + context.parsed.y  + '%' }  ; 
              myChart2.config.options.plugins.autocolors.mode = "dataset";  // a new color is picked for each dataset 
              myChart2.config.options.plugins.autocolors.offset = 1;
