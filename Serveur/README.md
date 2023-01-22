@@ -21,7 +21,7 @@ Le fichiers main pourra être utilisé lors de l'éxécution de la demarche pour
 
 ## Lancement API
 
-Pour lancer l'API, il faut que le jeu de données se situe au même endroit que tous fichiers de ce repertoire. Pour lancer le serveur Fast API, les commandes sont écrites ce dessous.  
+Pour lancer l'API, il faut que le jeu de données se situe au même endroit que tous fichiers de ce repertoire. Pour lancer le serveur Fast API, les commandes sont écrites ci-dessous.  
 
 **FastAPI** est un framework web haute performance, open source, permettant de créer des APIs avec    
 Python à partir de la version 3.6          
