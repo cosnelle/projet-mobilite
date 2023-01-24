@@ -6,7 +6,7 @@
     <meta charset="ISO 8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Présentation Projet</title>
+    <title>Projet Mobilite : Présentation Projet</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
     <link href="https://localhost:3000/Client/assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,7 +14,7 @@
     <!-- Template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
     <!-- CSS du template -->
-    <link href="http://127.0.0.1:3000/Client/blog.css" rel="stylesheet">
+    <link href="http://localhost:3000/Client/blog.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -77,8 +77,8 @@
       <header class="blog-header lh-1 py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div>
-            <img src="http://127.0.0.1:3000/Client/polytech.png" alt="LogoPolytech" width=30% height=30% />
-            <img src="http://127.0.0.1:3000/Client/univ.jpg" alt="LogoUniv" width=30% height=30% style="float:right;" />
+            <img src="http://localhost:3000/Client/polytech.png" alt="LogoPolytech" width=30% height=30% />
+            <img src="http://localhost:3000/Client/univ.jpg" alt="LogoUniv" width=30% height=30% style="float:right;" />
             <h1>Projet ingénieur</h1>
             <h2> Visualisation des données
               issues de l'enquête mobilité de l'Université de Lille</h2>
@@ -89,11 +89,11 @@
       <!--Liens vers les graphiques-->
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-          <a class="p-2 link-secondary" href="http://127.0.0.1:3000/Client/index.html">Accueil</a>
-          <a class="p-2 link-secondary" href="http://127.0.0.1:3000/Client/Graphe_chartjs/index.html">Graphiques en barre</a>
-          <a class="p-2 link-secondary" href="http://127.0.0.1:3000/Client/Carte/index.html">Carte</a>
-          <a class="p-2 link-secondary" href="http://127.0.0.1:3000/Client/Carte/index_sankey.html">Sankey</a>
-          <a class="p-2 link-secondary" href="http://127.0.0.1:3000/Client/Tableau/index.html">Tableau</a>
+          <a class="p-2 link-secondary" href="http://localhost:3000/Client/index.html">Accueil</a>
+          <a class="p-2 link-secondary" href="http://localhost:3000/Client/Graphe_chartjs/index_chartjs.html">Graphiques en barre</a>
+          <a class="p-2 link-secondary" href="http://localhost:3000/Client/Carte/index_carte.html">Carte</a>
+          <a class="p-2 link-secondary" href="http://localhost:3000/Client/Carte/index_sankey.html">Sankey</a>
+          <a class="p-2 link-secondary" href="http://localhost:3000/Client/Tableau/index_tableau.html">Tableau</a>
         </nav>
       </div>
     </div>
@@ -120,17 +120,63 @@
 
           <article class="blog-post">
             <h2 class="blog-post-title mb-1">Présentation projet</h2>
-            <p></p>
+            <p>
+              L'objectif de notre projet est de proposer des outils graphiques grâce à des données de même structure que celle de l’enquête effectuée. Par la suite, 
+              ils seront utilisés sur les données de l'enquête afin de permettre aux responsables de l'université de Lille de prendre des décisions (comme aide à la 
+              décision pour les responsables de l’Université de Lille). Lors du début de notre projet, l’enquête de mobilité n'avait pas encore été effectuée. Nous 
+              avons travaillé sur des fausses données générées de façon aléatoire par un code python fourni par notre responsable entreprise. Autrement dit, l’objectif 
+              principal du projet est de produire un ensemble de graphiques qui seront présentés sous un site web lancé en local. Les données présentes dans les 
+              graphiques sont issues d'un jeu de données en local. Avant d’être utilisées sur le site, elles seront agrégées dans une Application Programming Interface 
+              (API) locale.
+            </p>
           </article>
 
           <article class="blog-post">
             <h2 class="blog-post-title mb-1">Travaux réalisés</h2>
-            <p></p>
+            <p>
+              Nous avons réalisé un ensemble de composants web. Chacun d’entre eux est composé d’un fichier html et d’un script js. Les scripts js récupèrent les 
+              données depuis l’API lancée en local. Cette phase est suivie d’une phase d’intégration où nous relions tous les fichiers du client web dans un site web 
+              local. Nous verrons donc l’API développée, les graphiques mis en place et le site web déployé en local.
+            </p>
+            <p>
+              Actuellement, nous avons un ensemble de graphiques en barre et un pie chart, une carte, un sankey et un tableau.
+            </p>
           </article>
 
           <article class="blog-post">
             <h2 class="blog-post-title mb-1">Points d'amélioration</h2>
-            <p></p>
+            <ul>
+              <li>
+                ChartJS : Nous avons agrégé nos données en fonction des modes de transport et des universités afin de construire notre tableau de prise de décision en 
+                Chartjs. En effet, cela nous a permis d’avoir les informations telles que le mode de transport qui est le plus utilisé par les étudiants et le personnel,
+                 le mode de transport qui est le plus responsable des émissions de gaz à effet de serre…<br/>
+                Nous avons choisi cette agrégation car les informations fournies étaient pour nous les premières informations à savoir par les responsables de 
+                l'université de lille afin de mettre en place une politique de mobilité douce.<br/>
+                Pour la suite du projet, on pourrait également  faire des agrégations avec d’autres colonnes de notre jeu de données notamment, une agrégation en 
+                fonction des universités, des modes de transport et de la colonne Catégorie qui renseigne si l'individu concerné est un personnel ou un étudiant. Cela 
+                permettra par exemple de savoir si la voiture qui est le mode de transport le plus responsable de l'émission de Co2  avec le jeu de données qui nous a 
+                été fourni(à noter qu’il ne s’agit pas de vraies données) est plus utilisée par le personnel ou les étudiants. En effet cette agrégation permettra 
+                d’avoir la proportion d’étudiant et de personnel en termes d'émission de Co2 et ainsi de mieux adapter la politique de mobilité qui sera mise en place.
+              </li>
+              <li>
+                Carte : Sur la carte OpenStreetMap, il manque les filtres que nous avions mis sur le dessin de la carte de spécification du besoin “Visualisation des flux de 
+                déplacement” (Figure ?). Nous ne pouvons pas filtrer en fonction du mode de transport, de la catégorie de l’individus (étudiant, enseignant, personnel
+                , …) et de l’université. Ces filtres sont importants, ils permettent d’identifier le profil de certaines personnes et ainsi mener une politique de 
+                mobilité appropriée. <br/>
+                Par ailleurs, les traits verts représentant les flux de déplacement d’une commune à une autre manquent d’esthétique. Un autre framework que Leaflet 
+                est à envisager. Une autre amélioration des traits serait de ne plus afficher la distance à vol d’oiseau mais le trajet le plus court en termes de 
+                distance entre deux communes. Une autre possibilité est de représenter le flux de déplacement entre les communes par une flèche plus ou moins grande en 
+                fonction du nombre de personnes circulant de la commune A à la commune B.<br/>
+                Nous avons représenté sur la carte le nombre de personnes allant de leur domicile au campus universitaire. Cependant, ce projet s’inscrit dans la 
+                volonté de présenter la quantité des émissions de CO2 et équivalent CO2. Il est donc pertinent de présenter avec la cartographie les flux totaux de 
+                eCO2 rejetés annuellement.
+              </li>
+              <li>
+                Tableau : Une principale amélioration possible du tableau de la quantité annuelle de GES rejetés en fonction de la distance et du mode de transport est 
+                l’ajout de couleur en fonction de la quantité de kgeCO2 rejeté. Cela a pour but de mettre en avant les mobilités qui posent problème et qui ne respectent
+                 pas les accords de Paris. La mobilité doit représenter 0.3tCO2e en moyenne par Français. 
+              </li>
+            </ul>
           </article>
 
         </div>

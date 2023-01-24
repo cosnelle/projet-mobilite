@@ -4,13 +4,22 @@
 <head>
     <meta Content-Type= "text/html", charset="utf-8" >
     <meta name="viewport" content="width=device-width", initial-scale="1.0"> <!-- width=320 -->
-    <title>Projet Mobilité</title>
+    <title>Projet Mobilité : graphiques chartjs</title>
     <!-- copier le lien pour le css -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script> <!-- Ajouter chartjs a sa page -->
     <a href="/Nombre_mode_transport_univ"> </a>
    
      <!--  <a href="/relative/path/to/document.html"></a> -->
 
+     <!-- ajout template-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+    <link href="http://localhost:3000/Client/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- CSS du template -->
+    <link href="http://localhost:3000/Client/blog.css" rel="stylesheet">
+
+    
     <!-- Ratio veut 4 fois plus large que long -> 400, 100 -->
     <style>   
         .chartBox{ 
@@ -91,6 +100,31 @@
 </head>
 
 <body>
+
+  <div class="container">
+    <header class="blog-header lh-1 py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div>
+          <img src="https://localhost:3000/Client/polytech.png" alt="LogoPolytech" width=30% height=30% />
+          <img src="https://localhost:3000/Client/univ.jpg" alt="LogoUniv" width=30% height=30% style="float:right;" />
+          <h1>Projet ingénieur</h1>
+          <h2> Visualisation des données
+            issues de l'enquête mobilité de l'Université de Lille</h2>
+        </div>
+      </div>
+    </header>
+
+    <!--Liens vers les graphiques-->
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <a class="p-2 link-secondary" href="http://localhost:3000/Client/index.html">Accueil</a>
+        <a class="p-2 link-secondary" href="http://localhost:3000/Client/Graphe_chartjs/index_chartjs.html">Graphiques en barre</a>
+        <a class="p-2 link-secondary" href="http://localhost:3000/Client/Carte/index_carte.html">Carte</a>
+        <a class="p-2 link-secondary" href="http://localhost:3000/Client/Carte/index_sankey.html">Sankey</a>
+        <a class="p-2 link-secondary" href="http://localhost:3000/Client/Tableau/index_tableau.html">Tableau</a>
+      </nav>
+    </div>
+  </div>
   
   <CENTER> <h1> Diagrammes modes de transport, Distance domicile-école 
     et Emission de gaz à effet <br/> de serre université de lille </h1></CENTER>
@@ -128,8 +162,11 @@
     <script src ="config_functions.js"></script>  
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
 
-    
-</body>
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    </footer>
+
+  </body>
 </html>
 
 
