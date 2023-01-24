@@ -4,16 +4,16 @@
   <head>
     <meta charset="ISO 8859-1">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
-    <title>Carte</title>
+    <title>Projet Mobilite : Carte</title>
     <!-- La carte doit avoir une hauteur sinon elle ne peut pas apparaitre-->
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
-    <link href="https://juridolfi.github.io/mobilite.github.io/Client/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://localhost:3000/Client/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
     <!-- CSS du template -->
-    <link href="https://juridolfi.github.io/mobilite.github.io/Client/blog.css" rel="stylesheet">
+    <link href="https://localhost:3000/Client/blog.css" rel="stylesheet">
 
     <!-- code CSS utilise -->
     <style type="text/css">
@@ -30,8 +30,8 @@
       <header class="blog-header lh-1 py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div>
-            <img src="https://juridolfi.github.io/mobilite.github.io/Client/polytech.png" alt="LogoPolytech" width=30% height=30% />
-            <img src="https://juridolfi.github.io/mobilite.github.io/Client/univ.jpg" alt="LogoUniv" width=30% height=30% style="float:right;" />
+            <img src="https://localhost:3000/Client/polytech.png" alt="LogoPolytech" width=30% height=30% />
+            <img src="https://localhost:3000/Client/univ.jpg" alt="LogoUniv" width=30% height=30% style="float:right;" />
             <h1>Projet ingénieur</h1>
             <h2> Visualisation des données
               issues de l'enquête mobilité de l'Université de Lille</h2>
@@ -42,11 +42,11 @@
       <!--Liens vers les graphiques-->
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-          <a class="p-2 link-secondary" href="https://juridolfi.github.io/mobilite.github.io/Client/index.html">Accueil</a>
-          <a class="p-2 link-secondary" href="https://juridolfi.github.io/mobilite.github.io/Graphe_chartjs/index.html">Graphiques en barre</a>
-          <a class="p-2 link-secondary" href="https://juridolfi.github.io/mobilite.github.io/Carte/index.html">Carte</a>
-          <a class="p-2 link-secondary" href="https://juridolfi.github.io/mobilite.github.io/Carte/index_sankey.html">Sankey</a>
-          <a class="p-2 link-secondary" href="https://juridolfi.github.io/mobilite.github.io/Tableau/index.html">Tableau</a>
+          <a class="p-2 link-secondary" href="http://localhost:3000/Client/index.html">Accueil</a>
+          <a class="p-2 link-secondary" href="http://localhost:3000/Client/Graphe_chartjs/index_chartjs.html">Graphiques en barre</a>
+          <a class="p-2 link-secondary" href="http://localhost:3000/Client/Carte/index_carte.html">Carte</a>
+          <a class="p-2 link-secondary" href="http://localhost:3000/Client/Carte/index_sankey.html">Sankey</a>
+          <a class="p-2 link-secondary" href="http://localhost:3000/Client/Tableau/index_tableau.html">Tableau</a>
         </nav>
       </div>
     </div>
@@ -55,7 +55,7 @@
       <!-- Insertion map-->
       <h1>Carte</h1>
       <div align ="right">
-        <button id="flux" onclick="get_flux('http://127.0.0.1:8000/data_mobilite/geo/flux/person');">Flux de déplacement</button>
+        <button id="flux" onclick="get_flux('http://localhost:8000/data_mobilite/geo/flux/person');">Flux de déplacement</button>
       </div>
       <div id="map"></div>
     </div>
